@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relaxed Verhuren | [Platform Naam]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sand-light': '#FFFBEB', // Amber 50 (Warm strand zand)
+                        'ocean-blue': '#0EA5E9', // Sky 500
+                        'ocean-dark': '#0C4A6E', // Sky 900 (Tekst)
+                        'sun-yellow': '#FCD34D', // Amber 300
+                        'palm-green': '#10B981', // Emerald 500
+                        'coral': '#F43F5E', // Rose 500
+                    },
+                    fontFamily: {
+                        // Een handschrift font voor dat "ansichtkaart" gevoel
+                        display: ['Pacifico', 'cursive'],
+                        body: ['Quicksand', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-sunset': 'linear-gradient(to bottom right, #FFFBEB, #E0F2FE)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap');
+        
+        /* Golf Animatie */
+        .wave-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave-container svg {
+            position: relative;
+            display: block;
+            width: calc(150% + 1.3px);
+            height: 60px;
+        }
+        
+        /* Zwevende elementen animatie */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .float-slow { animation: float 6s ease-in-out infinite; }
+        .float-fast { animation: float 4s ease-in-out infinite reverse; }
+
+        /* Postzegel rand effect */
+        .stamp-border {
+            background-color: white;
+            background-image: radial-gradient(transparent 50%, #f3f4f6 50%);
+            background-size: 20px 20px;
+            background-position: -10px -10px;
+        }
+    </style>
+</head>
+<body class="font-body text-ocean-dark bg-gradient-sunset min-h-screen overflow-x-hidden">
+
+    <!-- Navbar: Beach Bar Style -->
+    <nav class="relative z-50 pt-6 px-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" class="font-display text-3xl text-ocean-blue tracking-wide drop-shadow-sm rotate-[-2deg]">
+                [Huisje]<span class="text-sun-yellow">.</span>
+            </a>
+            
+            <div class="hidden md:flex bg-white/70 backdrop-blur-md px-8 py-3 rounded-full shadow-sm border border-white/50 space-x-8 font-bold text-ocean-dark/80">
+                <a href="#hoe-werkt-het" class="hover:text-ocean-blue transition">De Reis</a>
+                <a href="#functies" class="hover:text-ocean-blue transition">Voorzieningen</a>
+                <a href="#tarieven" class="hover:text-ocean-blue transition">Tickets</a>
+            </div>
+
+            <a href="#" class="bg-ocean-blue text-white font-bold px-6 py-2 rounded-full hover:bg-sky-600 transition shadow-lg flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
+                Inchecken
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 pb-48 px-4 text-center overflow-hidden">
+        <!-- Zonnetje -->
+        <div class="absolute top-10 right-10 w-32 h-32 bg-sun-yellow rounded-full blur-2xl opacity-60"></div>
+        <div class="absolute top-20 left-20 w-20 h-20 bg-coral rounded-full blur-2xl opacity-40"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <span class="inline-block bg-palm-green/10 text-palm-green border border-palm-green/20 px-4 py-1 rounded-full font-bold text-sm mb-6 transform rotate-[-1deg]">
+                🌴 Speciaal voor BE & NL Eigenaars
+            </span>
+            
+            <h1 class="font-display text-6xl md:text-8xl text-ocean-blue mb-6 drop-shadow-sm">
+                Relax. <br>
+                <span class="text-ocean-dark text-5xl md:text-7xl font-sans font-bold">Wij doen de rest.</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-ocean-dark/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Jouw vakantiehuis verhuren hoeft geen werk te zijn. Krijg een prachtige website en laat de schoonmaakplanning en betalingen op de 
+                <span class="underline decoration-sun-yellow decoration-4 underline-offset-4">automatische piloot</span> lopen.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-sun-yellow text-ocean-dark font-bold text-lg px-8 py-4 rounded-xl shadow-xl hover:bg-yellow-400 transition transform hover:-translate-y-1 border-b-4 border-yellow-500 flex items-center justify-center gap-2">
+                    <span>☀️</span> Start je gratis reis
+                </a>
+                <a href="#" class="bg-white text-ocean-dark font-bold text-lg px-8 py-4 rounded-xl shadow-md hover:bg-gray-50 transition border border-gray-100 flex items-center justify-center gap-2">
+                    <span>🎥</span> Bekijk de tour
+                </a>
+            </div>
+        </div>
+
+        <!-- SVG Waves Bottom -->
+        <div class="wave-container text-white">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: white;"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Functies: Ansichtkaart Stijl -->
+    <section id="functies" class="bg-white py-20 px-4 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl text-ocean-blue mb-2">Vijf Sterren Service</h2>
+                <p class="text-gray-500 font-bold">Zonder de hotelprijzen.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-sand-light p-8 rounded-2xl shadow-lg border-2 border-white relative group transform hover:rotate-1 transition duration-300">
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-coral rounded-full flex items-center justify-center text-white font-bold shadow-md rotate-12">NEW</div>
+                    <div class="text-4xl mb-4">🏄‍♂️</div>
+                    <h3 class="font-bold text-2xl text-ocean-dark mb-3">Surf naar je eigen site</h3>
+                    <p class="text-ocean-dark/70">Geen saaie templates, maar een frisse website die vakantie ademt. Direct boekbaar en geoptimaliseerd voor mobiel.</p>
+                </div>
+
+                <!-- Card 2: Schoonmaak (Uitgelicht) -->
+                <div class="md:col-span-2 bg-gradient-to-r from-ocean-blue to-cyan-400 p-8 rounded-2xl shadow-xl text-white relative overflow-hidden flex flex-col md:flex-row items-center gap-8 transform hover:scale-[1.01] transition duration-300">
+                    <!-- Decoratieve Palmboom SVG (simpel) -->
+                    <div class="absolute top-0 right-0 opacity-20 transform translate-x-10 -translate-y-10">
+                        <svg width="200" height="200" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2C12,2 16,6 16,10C16,14 12,22 12,22C12,22 8,14 8,10C8,6 12,2 12,2M12,22V24H12V22M7,10C7,10 4,8 4,8C4,8 6,12 8,12C10,12 7,10 7,10M17,10C17,10 20,8 20,8C20,8 18,12 16,12C14,12 17,10 17,10Z"/></svg>
+                    </div>
+
+                    <div class="flex-1 z-10">
+                        <h3 class="font-display text-3xl mb-3">De "Schoonmaak-Cocktail" 🍹</h3>
+                        <p class="font-bold text-sky-100 text-lg mb-4">Mix WhatsApp niet met Excel.</p>
+                        <p class="text-white/90 leading-relaxed">
+                            Jouw poetsteam krijgt een <strong>digitale boarding pass</strong> (een simpele link). Daar zien ze precies wanneer ze moeten schoonmaken. Zodra ze klaar zijn, krijg jij een notificatie. Proost!
+                        </p>
+                    </div>
+                    <div class="bg-white text-ocean-dark p-4 rounded-xl shadow-lg rotate-2 w-64 flex-shrink-0 z-10">
+                        <div class="border-b border-gray-100 pb-2 mb-2 flex justify-between items-center">
+                            <span class="text-xs font-bold text-gray-400">PLANNING</span>
+                            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-sky-100 p-2 rounded-lg">🧽</div>
+                            <div>
+                                <div class="font-bold text-sm">Huisje 'De Duin'</div>
+                                <div class="text-xs text-gray-500">Vandaag, 10:00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-sand-light p-8 rounded-2xl shadow-lg border-2 border-white relative transform hover:-rotate-1 transition duration-300">
+                    <div class="text-4xl mb-4">🥐</div>
+                    <h3 class="font-bold text-2xl text-ocean-dark mb-3">Lokaal Genieten</h3>
+                    <p class="text-ocean-dark/70">Wij kennen de regels in België en Nederland. BTW, toeristenbelasting en facturen rollen er automatisch correct uit.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-sand-light p-8 rounded-2xl shadow-lg border-2 border-white relative transform hover:rotate-1 transition duration-300">
+                    <div class="text-4xl mb-4">💶</div>
+                    <h3 class="font-bold text-2xl text-ocean-dark mb-3">Kassa zonder Kater</h3>
+                    <p class="text-ocean-dark/70">Aanbetalingen en restsaldo's worden automatisch gevraagd. Ondersteuning voor iDeal en Bancontact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Tussenstukje -->
+    <section class="py-16 bg-ocean-blue text-white text-center relative overflow-hidden">
+        <!-- Golven Boven -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
+            <svg class="block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44 C204.00,106.39 0.00,0.00 0.00,0.00 L0.00,120.00 L1200.00,120.00 L1200.00,0.00 C1200.00,0.00 801.66,13.04 703.11,54.77 C557.06,116.59 476.35,-18.49 321.39,56.44 Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 relative z-10 pt-10">
+            <p class="font-display text-3xl mb-6">"Eindelijk voelt verhuren ook als vakantie."</p>
+            <div class="flex justify-center items-center gap-4">
+                <img src="https://placehold.co/100x100/FFFBEB/0C4A6E?text=M" alt="User" class="w-12 h-12 rounded-full border-2 border-white">
+                <div class="text-left">
+                    <div class="font-bold text-lg">Martine V.</div>
+                    <div class="text-sky-200 text-sm">Verhuurt 2 huisjes in Cadzand</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Golven Onder -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44 C204.00,106.39 0.00,0.00 0.00,0.00 L0.00,120.00 L1200.00,120.00 L1200.00,0.00 C1200.00,0.00 801.66,13.04 703.11,54.77 C557.06,116.59 476.35,-18.49 321.39,56.44 Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Pricing: Ticket Style -->
+    <section id="tarieven" class="py-24 px-4 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-4xl text-ocean-dark">Jouw Ticket naar Vrijheid</h2>
+                <p class="text-gray-500 mt-2">Geen verborgen bagagekosten. Gewoon één prijs.</p>
+            </div>
+
+            <div class="bg-sand-light rounded-3xl shadow-2xl relative overflow-hidden flex flex-col md:flex-row border-dashed border-4 border-ocean-blue/20">
+                
+                <!-- Left Part -->
+                <div class="p-10 md:w-2/3 relative z-10">
+                    <h3 class="font-bold text-2xl text-ocean-dark mb-2">All-Inclusive Pakket 🏝️</h3>
+                    <p class="text-gray-600 mb-8 text-sm">Alles wat je nodig hebt voor 1 vakantiehuis.</p>
+                    
+                    <ul class="space-y-4 mb-8 text-ocean-dark">
+                        <li class="flex items-center gap-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span class="font-bold">Eigen website + Hosting</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span class="font-bold">0% Commissie op boekingen</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span class="font-bold">Schoonmaakmodule inbegrepen</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span class="font-bold">Autom. Facturatie (BE/NL)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Part (Price - Ticket Stub look) -->
+                <div class="bg-ocean-blue md:w-1/3 relative flex flex-col items-center justify-center p-8 text-white">
+                    <!-- Perforatie -->
+                    <div class="absolute top-0 bottom-0 left-0 w-2 h-full hidden md:flex flex-col justify-between -translate-x-1/2 z-20">
+                         <!-- CSS dots for perforation simulation would go here, simplified with border on parent -->
+                    </div>
+                    
+                    <span class="uppercase tracking-widest text-xs font-bold text-sky-200 mb-2">Instapkaart</span>
+                    <div class="text-5xl font-display mb-2">€ XX</div>
+                    <span class="text-sky-100 font-bold text-sm">per maand / huis</span>
+                    
+                    <a href="#" class="mt-6 bg-sun-yellow text-ocean-dark font-bold px-6 py-3 rounded-full shadow-lg hover:bg-yellow-400 transition w-full text-center">
+                        Boek Nu
+                    </a>
+                    <p class="text-xs text-sky-200 mt-4 text-center">Jaarlijks gefactureerd</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sand-light pt-16 pb-8 text-center border-t border-ocean-blue/10">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="mb-8">
+                <span class="font-display text-2xl text-ocean-blue">[Huisje]<span class="text-sun-yellow">.</span></span>
+            </div>
+            <div class="flex justify-center gap-8 font-bold text-ocean-dark/60 mb-10 text-sm">
+                <a href="#" class="hover:text-ocean-blue">Contact</a>
+                <a href="#" class="hover:text-ocean-blue">Over Ons</a>
+                <a href="#" class="hover:text-ocean-blue">Algemene Voorwaarden</a>
+            </div>
+            <p class="text-sm text-gray-400">
+                Gemaakt met ☀️ in België & Nederland. &copy; 2024
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

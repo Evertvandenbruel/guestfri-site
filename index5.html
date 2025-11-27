@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jouw Vrijheid, Onze Zorg | [Platform Naam]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sand': '#FDFBF7', 
+                        'sunset-orange': '#F97316', 
+                        'ocean-teal': '#14B8A6',
+                        'deep-blue': '#1E3A8A',
+                        'warm-gold': '#F59E0B',
+                    },
+                    fontFamily: {
+                        'hand': ['Permanent Marker', 'cursive'],
+                        'heading': ['Merriweather', 'serif'],
+                        'body': ['Nunito', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80')",
+                        'paper-texture': "url('https://www.transparenttextures.com/patterns/cream-paper.png')",
+                    },
+                    boxShadow: {
+                        'polaroid': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 0 10px #ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Nunito:wght@400;600;700&family=Permanent+Marker&display=swap');
+        
+        /* Achtergrond met papiertextuur overlay */
+        body {
+            background-color: #FDFBF7;
+        }
+
+        /* Polaroid Effect */
+        .polaroid-card {
+            background: white;
+            padding: 1.5rem;
+            padding-bottom: 3rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 12px white;
+            transform: rotate(-1deg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .polaroid-card:hover {
+            transform: rotate(0deg) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 0 0 12px white;
+            z-index: 10;
+        }
+
+        /* Plakband Effect */
+        .tape {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            width: 100px;
+            height: 35px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-left: 1px dashed rgba(0,0,0,0.1);
+            border-right: 1px dashed rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            z-index: 20;
+            opacity: 0.7;
+        }
+
+        /* Hero Text Shadow voor leesbaarheid op foto */
+        .text-shadow-hero {
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Zachte golf animatie */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-body text-gray-700 antialiased overflow-x-hidden">
+
+    <!-- Navigatie (Transparant op Hero) -->
+    <nav class="absolute top-0 w-full z-50 py-6 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-hand text-white text-shadow-hero tracking-wider rotate-[-2deg]">
+                [Huisje].
+            </div>
+            <div class="hidden md:flex space-x-8 text-white font-bold text-shadow-hero text-sm tracking-wide">
+                <a href="#dromen" class="hover:text-warm-gold transition">Over Ons</a>
+                <a href="#gemak" class="hover:text-warm-gold transition">Het Gemak</a>
+                <a href="#investering" class="hover:text-warm-gold transition">Tarieven</a>
+            </div>
+            <a href="#" class="bg-white/90 backdrop-blur text-sunset-orange font-bold px-6 py-2 rounded-full hover:bg-white transition shadow-lg transform hover:scale-105">
+                Inloggen
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Sectie: De Emotie -->
+    <header class="relative h-[90vh] min-h-[600px] flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
+        <!-- Donkere overlay voor leesbaarheid -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-sand"></div>
+
+        <div class="relative z-10 text-center max-w-4xl px-4 mt-10">
+            <span class="inline-block py-1 px-4 mb-6 border border-white/30 rounded-full bg-white/10 backdrop-blur-md text-white font-bold text-sm tracking-widest uppercase">
+                Voor eigenaars in BE & NL
+            </span>
+            <h1 class="font-heading font-light text-5xl md:text-7xl text-white mb-6 leading-tight text-shadow-hero">
+                Verhuren met het gevoel van <br>
+                <span class="font-hand text-warm-gold text-6xl md:text-8xl block mt-2 transform -rotate-2">eeuwige vakantie.</span>
+            </h1>
+            <p class="text-xl text-white/90 max-w-2xl mx-auto mb-10 font-medium text-shadow-hero">
+                Geef je gasten een warm welkom en jezelf rust. Wij regelen de website, de betalingen en die vervelende schoonmaakplanning.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#gemak" class="bg-sunset-orange text-white text-lg font-bold px-10 py-4 rounded-full shadow-2xl hover:bg-orange-600 transition transform hover:-translate-y-1">
+                    Start jouw reis
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-400">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </header>
+
+    <!-- Sectie: Het Fotoboek (Functies) -->
+    <section id="gemak" class="py-24 px-4 bg-sand relative overflow-hidden">
+        <!-- Decoratieve elementen -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-warm-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-ocean-teal/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-20">
+                <h2 class="font-hand text-4xl text-deep-blue mb-4 rotate-[-1deg]">Herinneringen maken, geen zorgen.</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg font-heading italic">
+                    "Onze software werkt als een onzichtbare conciërge. Jij geniet van je vrije tijd, wij doen het zware werk."
+                </p>
+            </div>
+
+            <!-- Polaroid Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 px-4">
+                
+                <!-- Polaroid 1: Website -->
+                <div class="polaroid-card relative mt-4">
+                    <div class="tape bg-yellow-100/50"></div>
+                    <div class="bg-gray-100 h-48 mb-6 overflow-hidden rounded-sm relative group">
+                        <!-- Placeholder Image -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-100 to-white flex items-center justify-center text-ocean-teal">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div class="absolute bottom-2 right-2 bg-white px-2 py-1 text-xs font-bold text-gray-400 rotate-[-2deg] shadow-sm">
+                            Jouw Site.jpg
+                        </div>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-deep-blue mb-2">Een eigen plekje online</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Geen dertien-in-een-dozijn pagina, maar een sfeervolle website die jouw huisje eer aandoet. Direct boekbaar, zonder commissies.
+                    </p>
+                    <div class="mt-4 font-hand text-sunset-orange text-sm rotate-1">
+                        In 1 uur live! ->
+                    </div>
+                </div>
+
+                <!-- Polaroid 2: Schoonmaak (Centerpiece) -->
+                <div class="polaroid-card relative transform md:-translate-y-8 z-20">
+                    <div class="tape bg-red-100/50 rotate-2"></div>
+                    <div class="bg-gray-100 h-48 mb-6 overflow-hidden rounded-sm relative">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-green-100 to-white flex items-center justify-center text-green-600">
+                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                        </div>
+                         <div class="absolute bottom-2 right-2 bg-white px-2 py-1 text-xs font-bold text-gray-400 rotate-[3deg] shadow-sm">
+                            Schoonmaak_Team.png
+                        </div>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-deep-blue mb-2">De Magische Schoonmaak</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Vergeet Excel. Je kuisteam krijgt een simpele link. Ze zien wanneer ze moeten komen en vinken het af als het weer blinkt.
+                    </p>
+                    <div class="mt-4 font-hand text-green-600 text-sm -rotate-2">
+                        Geen inlog nodig! ✨
+                    </div>
+                </div>
+
+                <!-- Polaroid 3: Admin -->
+                <div class="polaroid-card relative mt-4">
+                    <div class="tape bg-blue-100/50"></div>
+                    <div class="bg-gray-100 h-48 mb-6 overflow-hidden rounded-sm relative">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-yellow-100 to-white flex items-center justify-center text-warm-gold">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.414.414l5 5a1 1 0 01.414.414V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                         <div class="absolute bottom-2 right-2 bg-white px-2 py-1 text-xs font-bold text-gray-400 rotate-[-1deg] shadow-sm">
+                            Administratie_Klaar.pdf
+                        </div>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-deep-blue mb-2">Administratie op Autopilot</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Toeristentaks in Cadzand of BTW in de Ardennen? Wij kennen de lokale regels. Facturen worden automatisch gemaakt.
+                    </p>
+                    <div class="mt-4 font-hand text-ocean-teal text-sm rotate-1">
+                        Slaap op beide oren 💤
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectie: Het Ticket (Pricing) -->
+    <section id="investering" class="py-24 bg-white border-t border-dashed border-gray-300">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            
+            <h2 class="font-heading text-3xl text-deep-blue mb-12">
+                Jouw ticket naar rust <span class="text-sunset-orange">.</span>
+            </h2>
+
+            <!-- Het "Boarding Pass" Design -->
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-200 relative max-w-3xl mx-auto transform hover:scale-[1.01] transition duration-500">
+                
+                <!-- Decoratieve Barcode Streepjes links -->
+                <div class="hidden md:flex flex-col justify-between absolute left-0 top-0 bottom-0 py-4 pl-2 opacity-20">
+                     <div class="w-1 h-full border-r-2 border-dashed border-black"></div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="p-8 md:p-10 flex-1 text-left relative z-10 bg-sand/30">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Bestemming</span>
+                            <h3 class="font-hand text-2xl text-deep-blue mt-1">Vrijheid & Winst</h3>
+                        </div>
+                        <div class="text-right">
+                             <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Klasse</span>
+                             <div class="text-sunset-orange font-bold mt-1">Premium Economy</div>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 text-gray-600 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Alles-in-één platform</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>0% Commissie per boeking</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Inclusief Hosting & Updates</span>
+                        </li>
+                    </ul>
+
+                    <div class="text-xs text-gray-400 italic">
+                        * Maandelijks opzegbaar. Geen kleine lettertjes.
+                    </div>
+                </div>
+
+                <!-- Tear-off Section (Price) -->
+                <div class="relative bg-deep-blue text-white p-8 md:w-1/3 flex flex-col justify-center items-center text-center">
+                    <!-- Perforatie Cirkels -->
+                    <div class="absolute left-0 top-0 bottom-0 w-4 -translate-x-1/2 flex flex-col justify-between py-2 z-20">
+                         <div class="w-4 h-4 rounded-full bg-white mb-2"></div>
+                         <div class="w-4 h-4 rounded-full bg-white mb-2"></div>
+                         <div class="w-4 h-4 rounded-full bg-white mb-2"></div>
+                         <div class="w-4 h-4 rounded-full bg-white mb-2"></div>
+                         <div class="w-4 h-4 rounded-full bg-white mb-2"></div>
+                         <div class="w-4 h-4 rounded-full bg-white mb-2"></div>
+                         <div class="w-4 h-4 rounded-full bg-white mb-2"></div>
+                         <div class="w-4 h-4 rounded-full bg-white"></div>
+                    </div>
+
+                    <span class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Vaste Prijs</span>
+                    <div class="text-5xl font-heading font-bold mb-2">€XX</div>
+                    <span class="text-blue-200 text-sm">/ maand per huis</span>
+
+                    <a href="#" class="mt-6 bg-warm-gold text-deep-blue font-bold px-6 py-3 rounded-lg hover:bg-yellow-400 transition w-full shadow-lg">
+                        Boeken
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer: Zonsondergang -->
+    <footer class="bg-gradient-to-b from-white to-orange-50 pt-20 pb-10">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h2 class="font-hand text-3xl text-gray-400 mb-8">
+                Groeten uit [Locatie van je Kantoor] ☀️
+            </h2>
+            <div class="flex justify-center space-x-6 mb-8 opacity-60 grayscale hover:grayscale-0 transition duration-500">
+                <!-- Social Icons Placeholder -->
+                <div class="w-8 h-8 bg-blue-500 rounded-full"></div>
+                <div class="w-8 h-8 bg-pink-500 rounded-full"></div>
+                <div class="w-8 h-8 bg-blue-400 rounded-full"></div>
+            </div>
+            <p class="text-sm text-gray-400 font-heading">
+                &copy; 2024 [Platform Naam]. Gemaakt met liefde voor gastvrijheid.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

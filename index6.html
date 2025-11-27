@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust in Verhuur | [Platform Naam]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-bg': '#FAFAF9', // Stone 50 (Heel licht warm grijs)
+                        'brand-text': '#44403C', // Stone 700
+                        'brand-accent': '#C2410C', // Orange 700 (Terracotta)
+                        'brand-surface': '#FFFFFF',
+                        'brand-soft': '#F5F5F4', // Stone 100
+                        'sage': '#D1FAE5', // Zacht groen accent
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Lato', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        // Een rustiger, meer "premium" vakantiebeeld (linnen, zonlicht)
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2025&q=80')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+        
+        /* Smooth scrolling en basis */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Lato', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+        /* Subtle Fade In Animation */
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-400 { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-text antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- Elegante Navigatie -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-bold tracking-tight text-brand-text">
+                [Huisje]<span class="text-brand-accent">.</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-10 text-sm font-medium tracking-wide uppercase text-stone-500">
+                <a href="#filosofie" class="hover:text-brand-accent transition">Filosofie</a>
+                <a href="#features" class="hover:text-brand-accent transition">Gemak</a>
+                <a href="#tarief" class="hover:text-brand-accent transition">Lidmaatschap</a>
+            </div>
+
+            <a href="#" class="px-6 py-2.5 bg-brand-text text-white text-sm font-bold uppercase tracking-wider hover:bg-brand-accent transition duration-300">
+                Inloggen
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Sectie: Rust & Ruimte -->
+    <header class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Achtergrond afbeelding -->
+        <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center"></div>
+        <!-- Zachte overlay -->
+        <div class="absolute inset-0 bg-stone-900/30"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto text-white fade-in-up">
+            <p class="mb-6 font-sans text-sm md:text-base font-bold tracking-[0.2em] uppercase opacity-90">
+                Exclusief voor eigenaars in BE & NL
+            </p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl leading-tight mb-8 font-medium">
+                De kunst van <br> <span class="italic text-stone-100">zorgeloos verhuren.</span>
+            </h1>
+            <p class="text-lg md:text-xl font-light text-stone-100 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Geef uw vakantiehuis de aandacht die het verdient, zonder dat het uw tijd kost.
+                Website, betalingen en schoonmaak in één elegant systeem.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="#features" class="px-8 py-4 bg-white text-stone-900 font-bold uppercase tracking-widest text-xs hover:bg-stone-200 transition duration-300 min-w-[200px]">
+                    Ontdek het platform
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Introductie: De Rust -->
+    <section id="filosofie" class="py-24 bg-brand-bg px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <span class="text-brand-accent font-bold tracking-widest text-xs uppercase mb-4 block">Onze Belofte</span>
+            <h2 class="text-3xl md:text-4xl mb-8 leading-snug">
+                "Het voelt niet als software. <br> Het voelt als een conciërge."
+            </h2>
+            <p class="text-stone-500 text-lg font-light leading-relaxed">
+                Wij geloven dat technologie op de achtergrond moet blijven. Het moet stil zijn. 
+                Onze tools nemen het zware werk uit handen — de administratie, de planning, de facturatie — zodat u zich kunt richten op wat echt telt: de ervaring van uw gasten (en uw eigen rust).
+            </p>
+            <div class="mt-12 w-16 h-1 bg-brand-accent mx-auto"></div>
+        </div>
+    </section>
+
+    <!-- Features: Magazine Layout -->
+    <section id="features" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto space-y-24">
+            
+            <!-- Feature 1: Website -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-stone-200 transform translate-x-4 translate-y-4 transition duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Mooi interieur" class="relative w-full h-[400px] object-cover grayscale-[20%] group-hover:grayscale-0 transition duration-500 shadow-lg">
+                </div>
+                <div class="lg:pl-10">
+                    <h3 class="text-3xl font-serif mb-6">Uw visitekaartje, <br><span class="italic text-brand-accent">online.</span></h3>
+                    <p class="text-stone-600 mb-6 leading-relaxed font-light">
+                        Vergeet complexe websitebouwers. U krijgt direct een minimalistische, sfeervolle website die de schoonheid van uw woning benadrukt. Geoptimaliseerd voor directe boekingen, zonder dat u 15% commissie afdraagt aan derden.
+                    </p>
+                    <ul class="space-y-4 text-sm text-stone-500 font-medium">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-brand-accent mr-4"></span>Geschikt voor mobiel, tablet en desktop</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-brand-accent mr-4"></span>Directe betalingen (iDeal & Bancontact)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 2: Schoonmaak (USP) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="lg:order-2 relative group">
+                    <div class="absolute inset-0 bg-stone-200 transform -translate-x-4 translate-y-4 transition duration-500 group-hover:-translate-x-2 group-hover:translate-y-2"></div>
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Schone lakens" class="relative w-full h-[400px] object-cover grayscale-[20%] group-hover:grayscale-0 transition duration-500 shadow-lg">
+                    
+                    <!-- Floating UI Element Mockup -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 shadow-xl max-w-xs border border-stone-100 hidden md:block">
+                        <p class="text-xs uppercase tracking-widest text-stone-400 mb-2">Status Update</p>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            <p class="font-serif italic text-lg text-brand-text">"Woning Duinroos is klaar voor aankomst."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:order-1 lg:pr-10">
+                    <h3 class="text-3xl font-serif mb-6">De stille kracht van <br><span class="italic text-brand-accent">perfecte planning.</span></h3>
+                    <p class="text-stone-600 mb-6 leading-relaxed font-light">
+                        Geen WhatsApp-groepen meer. Geen Excel-sheets. Uw schoonmaakteam ontvangt automatisch een discrete link met hun rooster. Zij vinken taken af, u ontvangt een stille notificatie.
+                    </p>
+                    <p class="text-stone-600 leading-relaxed font-light">
+                        Het systeem werkt autonoom, zodat u kunt genieten van uw eigen tijd, wetende dat uw woning in perfecte staat is voor de volgende gast.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 3: Administratie -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-stone-200 transform translate-x-4 translate-y-4 transition duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Administratie en koffie" class="relative w-full h-[400px] object-cover grayscale-[20%] group-hover:grayscale-0 transition duration-500 shadow-lg">
+                </div>
+                <div class="lg:pl-10">
+                    <h3 class="text-3xl font-serif mb-6">Lokale expertise, <br><span class="italic text-brand-accent">ingebouwd.</span></h3>
+                    <p class="text-stone-600 mb-6 leading-relaxed font-light">
+                        Regelgeving in België en Nederland is complex. Ons platform kent de nuances. Toeristenbelasting, BTW-regels en correcte facturatie worden automatisch gegenereerd. 
+                    </p>
+                    <ul class="space-y-4 text-sm text-stone-500 font-medium">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-brand-accent mr-4"></span>Automatische berekening toeristentaks</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-brand-accent mr-4"></span>Meertalige documenten (NL/FR/EN)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pricing: Minimalist -->
+    <section id="tarief" class="py-24 bg-stone-100">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-serif mb-4 text-brand-text">Eenvoud in prijzen.</h2>
+            <p class="text-stone-500 font-light mb-12">Transparantie is de basis van vertrouwen.</p>
+
+            <div class="bg-white p-12 shadow-2xl max-w-lg mx-auto border-t-4 border-brand-accent relative">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-accent text-white px-4 py-1 text-xs uppercase tracking-widest font-bold">
+                    All Inclusive
+                </div>
+                
+                <h3 class="text-lg font-bold uppercase tracking-widest text-stone-400 mb-6">Jaarlijks Lidmaatschap</h3>
+                
+                <div class="flex justify-center items-baseline mb-8">
+                    <span class="text-5xl font-serif text-brand-text">€XX</span>
+                    <span class="ml-2 text-stone-400 font-light">/ maand per woning</span>
+                </div>
+
+                <div class="space-y-4 text-left text-stone-600 font-light mb-10 border-t border-b border-stone-100 py-8">
+                    <p class="flex justify-between"><span>Website & Hosting</span> <span class="text-brand-accent">Inbegrepen</span></p>
+                    <p class="flex justify-between"><span>Schoonmaak Module</span> <span class="text-brand-accent">Inbegrepen</span></p>
+                    <p class="flex justify-between"><span>Lokale Facturatie</span> <span class="text-brand-accent">Inbegrepen</span></p>
+                    <p class="flex justify-between"><span>Commissie op boekingen</span> <span class="font-bold text-brand-text">0%</span></p>
+                </div>
+
+                <a href="#" class="block w-full py-4 bg-brand-text text-white font-bold uppercase tracking-widest text-xs hover:bg-stone-800 transition duration-300">
+                    Start Proefperiode
+                </a>
+                <p class="mt-4 text-xs text-stone-400">14 dagen gratis proberen. Geen verplichtingen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer: Minimalistisch -->
+    <footer class="bg-white py-16 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <a href="#" class="text-xl font-serif font-bold tracking-tight text-brand-text">
+                    [Huisje]<span class="text-brand-accent">.</span>
+                </a>
+                <p class="text-xs text-stone-400 mt-2 uppercase tracking-widest">Designed for serenity</p>
+            </div>
+            
+            <div class="flex space-x-8 text-sm text-stone-500">
+                <a href="#" class="hover:text-brand-text transition">Support</a>
+                <a href="#" class="hover:text-brand-text transition">Privacy</a>
+                <a href="#" class="hover:text-brand-text transition">Algemene Voorwaarden</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-stone-100 text-center text-xs text-stone-300">
+            &copy; 2024 [Platform Naam]. Alle rechten voorbehouden.
+        </div>
+    </footer>
+
+</body>
+</html>

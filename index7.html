@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natuurlijk Verhuren | [Platform Naam]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'forest-dark': '#1C2E2A', // Zeer donker groen/zwart
+                        'forest-green': '#2D4A42', // Diep dennen groen
+                        'wood-warm': '#A67C52', // Warm hout
+                        'wood-light': '#E8E1D9', // Licht beige/grijs (zoals berkenschors)
+                        'stone-gray': '#57534E', // Warm grijs
+                        'ember': '#D97706', // Gloeiend oranje accent
+                    },
+                    fontFamily: {
+                        'serif': ['Lora', 'serif'], // Elegant en klassiek
+                        'sans': ['Source Sans Pro', 'sans-serif'], // Leesbaar en modern
+                    },
+                    backgroundImage: {
+                        // Mistig bos / cabin sfeer
+                        'forest-mist': "url('https://images.unsplash.com/photo-1448375240586-dfd8f3793306?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')",
+                        'wood-texture': "url('https://www.transparenttextures.com/patterns/wood-pattern.png')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+        /* Subtiele textuur overlay */
+        .texture-overlay {
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-wood-light text-forest-dark font-sans antialiased selection:bg-forest-green selection:text-wood-light">
+
+    <!-- Navigatie: Rustiek & Solide -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-forest-dark/95 backdrop-blur-sm text-wood-light border-b border-forest-green">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <!-- Icoon van een dennenboom (simpel SVG) -->
+                <svg class="w-6 h-6 text-wood-warm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.5l6.5 13h-13L12 5.5zM12 8l-3.5 7h7L12 8z"/></svg>
+                <span class="text-xl font-serif font-bold tracking-wider">[Chalet]</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-widest uppercase text-stone-400">
+                <a href="#sfeer" class="hover:text-wood-warm transition">Sfeer</a>
+                <a href="#gemak" class="hover:text-wood-warm transition">Comfort</a>
+                <a href="#tarief" class="hover:text-wood-warm transition">Tarieven</a>
+            </div>
+
+            <a href="#" class="border border-wood-warm text-wood-warm px-6 py-2 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-wood-warm hover:text-forest-dark transition">
+                Inloggen
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero: De Diepte van het Bos -->
+    <header class="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-forest-dark">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-forest-mist bg-cover bg-center opacity-60 mix-blend-overlay"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-forest-dark/80 via-transparent to-wood-light"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-10">
+            <div class="mb-6 flex justify-center">
+                <span class="bg-forest-green/50 border border-forest-green/50 text-wood-light px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
+                    Voor de verhuurder die houdt van natuur
+                </span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-serif text-wood-light mb-8 leading-tight drop-shadow-lg">
+                Jouw toevluchtsoord, <br> <span class="italic text-wood-warm">moeiteloos beheerd.</span>
+            </h1>
+            
+            <p class="text-xl font-light text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
+                Software zo robuust als een eik, zo helder als een bergbeek.
+                Wij regelen de techniek, zodat jij kunt genieten van het bos.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#gemak" class="bg-wood-warm text-forest-dark font-bold px-8 py-4 rounded-sm shadow-xl hover:bg-amber-600 transition transform hover:-translate-y-1">
+                    Ontdek het platform
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Intro: Warmte & Hout -->
+    <section id="sfeer" class="py-24 px-6 bg-wood-light relative">
+        <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-wood-light to-transparent"></div>
+        
+        <div class="max-w-3xl mx-auto text-center">
+            <svg class="w-8 h-8 text-forest-green mx-auto mb-6 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
+            <h2 class="text-3xl md:text-4xl font-serif text-forest-dark mb-8">
+                "Het Ardennen-gevoel begint bij de boeking."
+            </h2>
+            <p class="text-lg text-stone-gray font-light leading-loose">
+                Je vakantiehuis is een plek om te ontsnappen aan de drukte. Waarom zou het beheer ervan dan stressvol zijn?
+                Onze tool is gebouwd met de filosofie van een 'cabin': <strong>simpel, functioneel en gebouwd om lang mee te gaan.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Features: Kaarten op Hout -->
+    <section id="gemak" class="py-20 px-6 bg-[#E3Dcd3]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Card 1 -->
+            <div class="bg-white p-8 rounded-sm shadow-sm border-t-4 border-forest-green group hover:shadow-lg transition duration-300">
+                <div class="h-12 w-12 bg-forest-green/10 rounded-full flex items-center justify-center mb-6 text-forest-green">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-forest-dark mb-4 group-hover:text-wood-warm transition">Een Warm Welkom</h3>
+                <p class="text-stone-gray text-sm leading-relaxed">
+                    Een sfeervolle website voor je chalet of huisje. Geen koude standaard templates, maar een design dat de gezelligheid van jouw plek uitstraalt.
+                </p>
+                <div class="mt-6 pt-6 border-t border-gray-100 flex items-center text-xs text-forest-green font-bold uppercase tracking-widest">
+                    Direct Boekbaar
+                </div>
+            </div>
+
+            <!-- Card 2 (Highlight) -->
+            <div class="bg-forest-dark text-wood-light p-8 rounded-sm shadow-xl relative overflow-hidden transform md:-translate-y-4">
+                <!-- Texture overlay -->
+                <div class="absolute inset-0 texture-overlay opacity-20"></div>
+                
+                <div class="relative z-10">
+                    <div class="h-12 w-12 bg-wood-warm/20 rounded-full flex items-center justify-center mb-6 text-wood-warm">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-4">Schoonmaak zonder Zorgen</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                        In de Ardennen is bereik soms lastig. Daarom werkt ons systeem simpel. 
+                        Je kuisteam krijgt een link (werkt ook op trage 4G). Ze zien de datum, maken schoon, en vinken het af.
+                    </p>
+                    <div class="p-3 bg-white/10 rounded border border-white/10 flex items-center gap-3">
+                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-xs font-bold">Chalet 'De Den' is klaar!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-8 rounded-sm shadow-sm border-t-4 border-forest-green group hover:shadow-lg transition duration-300">
+                <div class="h-12 w-12 bg-forest-green/10 rounded-full flex items-center justify-center mb-6 text-forest-green">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.414.414l5 5a1 1 0 01.414.414V19a2 2 0 01-2 2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-forest-dark mb-4 group-hover:text-wood-warm transition">Lokale Wetgeving</h3>
+                <p class="text-stone-gray text-sm leading-relaxed">
+                    Of je nu in Durbuy of Spa zit, wij kennen de regels. Toeristenbelasting en BTW worden correct berekend op je facturen.
+                </p>
+                <div class="mt-6 pt-6 border-t border-gray-100 flex items-center text-xs text-forest-green font-bold uppercase tracking-widest">
+                    Conform BE & NL
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Visual Break: Cabin Image -->
+    <section class="py-32 bg-forest-dark relative bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-serif text-white mb-6 italic leading-snug">
+                "Eindelijk een systeem dat niet voelt als werken, <br>maar als thuiskomen."
+            </h2>
+            <div class="w-24 h-1 bg-wood-warm mx-auto"></div>
+        </div>
+    </section>
+
+    <!-- Pricing: De Houthakkerskaart -->
+    <section id="tarief" class="py-24 px-6 bg-wood-light">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif text-forest-dark">Eerlijke Prijzen</h2>
+                <p class="text-stone-gray mt-2">Geen kleine lettertjes, gewoon rechttoe rechtaan.</p>
+            </div>
+
+            <div class="bg-[#F5F1EB] rounded-lg shadow-xl border border-[#D6CFC7] flex flex-col md:flex-row overflow-hidden max-w-2xl mx-auto">
+                
+                <!-- Links: Info -->
+                <div class="p-10 md:w-2/3">
+                    <h3 class="text-2xl font-serif text-forest-green font-bold mb-2">Het Boswachter Pakket</h3>
+                    <p class="text-stone-500 text-sm mb-8 italic">Alles wat je nodig hebt voor 1 vakantiehuis.</p>
+                    
+                    <ul class="space-y-4 text-forest-dark text-sm">
+                        <li class="flex items-center gap-3">
+                            <span class="text-wood-warm text-lg">✓</span> Eigen website & hosting
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-wood-warm text-lg">✓</span> Onbeperkte boekingen (0% commissie)
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-wood-warm text-lg">✓</span> Schoonmaakplanner
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-wood-warm text-lg">✓</span> Automatische facturatie
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Rechts: Prijs (Hout look) -->
+                <div class="bg-forest-green md:w-1/3 p-8 flex flex-col items-center justify-center text-wood-light relative">
+                    <!-- Wood Texture Overlay -->
+                    <div class="absolute inset-0 texture-overlay opacity-30 mix-blend-multiply"></div>
+                    
+                    <span class="relative z-10 text-xs uppercase tracking-widest opacity-80 mb-2">Per Maand</span>
+                    <div class="relative z-10 text-5xl font-serif font-bold mb-2">€XX</div>
+                    <span class="relative z-10 text-xs opacity-60 text-center">Jaarlijks gefactureerd<br>Per huis</span>
+                    
+                    <a href="#" class="relative z-10 mt-6 bg-wood-warm text-forest-dark px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-amber-600 transition shadow-lg w-full text-center">
+                        Start Nu
+                    </a>
+                </div>
+            </div>
+            
+            <p class="text-center text-xs text-stone-400 mt-8">
+                Probeer 14 dagen gratis. Geen creditcard nodig.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer: Kampvuur -->
+    <footer class="bg-forest-dark text-stone-400 py-16 border-t border-forest-green/30">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <span class="text-2xl font-serif font-bold text-wood-warm tracking-wider block mb-2">[Chalet]</span>
+                <p class="text-sm opacity-60">Gemaakt met liefde voor de Ardennen.</p>
+            </div>
+            
+            <div class="flex gap-8 text-sm font-semibold uppercase tracking-widest text-stone-500">
+                <a href="#" class="hover:text-wood-warm transition">Contact</a>
+                <a href="#" class="hover:text-wood-warm transition">Voorwaarden</a>
+                <a href="#" class="hover:text-wood-warm transition">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
