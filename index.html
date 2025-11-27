@@ -1,32 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guestfri</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uw Vakantiehuis, Eenvoudig Verhuurd | [Platform Naam]</title>
+    <!-- Laad Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configureer Tailwind voor Inter font en aangepaste kleuren -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0057FF', // Helder blauw
+                        'secondary': '#FFD700', // Goud/geel voor accenten
+                        'background': '#F9FAFB', // Zeer lichte grijze achtergrond
+                        'dark-text': '#1F2937',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Laad het Inter lettertype */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    </style>
 </head>
+<body class="font-sans text-dark-text bg-background">
 
-<body class="bg-[#31105F] text-white flex items-center justify-center min-h-screen">
+    <!-- Navigatiebalk -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-extrabold text-primary">
+                    [Platform Naam]<span class="text-secondary text-4xl leading-none">.</span>
+                </a>
+                
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#functies" class="text-gray-600 hover:text-primary transition duration-150">Functies</a>
+                    <a href="#prijzen" class="text-gray-600 hover:text-primary transition duration-150">Prijzen</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition duration-150">Support</a>
+                    <a href="#" class="text-gray-600 hover:text-primary font-medium border-r pr-8 mr-8">Log In</a>
+                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg font-semibold shadow-lg hover:bg-blue-700 transition duration-300">
+                        Start Gratis
+                    </a>
+                </nav>
 
-  <div class="text-center px-6">
-    <h1 class="text-6xl font-bold text-white tracking-wide">
-      <span class="font-extrabold">Guest</span><span class="font-extrabold text-white">fri</span>
-    </h1>
+                <!-- Mobiele Menu Knop (SVG Icon - Hamburger) -->
+                <button class="md:hidden p-2 text-gray-700 hover:text-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
 
-    <p class="mt-4 text-lg">
-      Earn more and spend less time managing your rental home <br>
-      with the most efficient booking software around.
-    </p>
+    <!-- Hero Sectie -->
+    <main class="pt-16 pb-20 sm:pt-24 sm:pb-32 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-dark-text tracking-tight mb-6">
+                Uw Vakantiehuis <span class="text-primary block lg:inline">Eenvoudig & Winstgevend</span> Verhuurd.
+            </h1>
+            <p class="mt-4 max-w-3xl mx-auto text-xl text-gray-600">
+                Speciaal gebouwd voor eigenaren met één vakantiehuis in België & Nederland. Directe boekingen, lokale facturatie, en **schoonmaakcommunicatie zonder gedoe.**
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#" class="inline-block bg-primary text-white text-lg px-8 py-3 rounded-xl font-bold shadow-2xl shadow-blue-500/50 hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                    Start Vandaag Nog (Binnen ± 1 Uur Live)
+                </a>
+                <a href="#prijzen" class="inline-block bg-white border border-gray-300 text-dark-text text-lg px-8 py-3 rounded-xl font-medium shadow-md hover:bg-gray-100 transition duration-300">
+                    Bekijk Transparante Prijzen
+                </a>
+            </div>
+            <p class="mt-6 text-sm text-gray-500">
+                Geen commissies, geen verborgen kosten. Flat-fee prijsmodel.
+            </p>
+            <div class="mt-16">
+                <!-- Placeholder for "App Screenshot" or "Website Example" -->
+                <div class="bg-white p-6 rounded-2xl shadow-2xl border border-gray-100">
+                    <img src="https://placehold.co/1200x500/E0F2FE/1F2937?text=Voorbeeld+van+uw+Direct-Boeking+Website" alt="Voorbeeld van een direct boeking website" class="rounded-lg w-full">
+                </div>
+            </div>
+        </div>
+    </main>
 
-    <ul class="mt-6 space-y-2 text-lg">
-      <li class="font-semibold"><span class="font-bold">Idiot-proof calendar sync</span></li>
-      <li class="font-semibold"><span class="font-bold">Manage your own site</span></li>
-      <li class="font-semibold"><span class="font-bold">Keep your data where it should be: in private</span></li>
-    </ul>
-  </div>
+    <!-- Functies Sectie -->
+    <section id="functies" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-center text-dark-text sm:text-4xl mb-12">
+                Gebouwd om u Tijd & Geld te Besparen
+            </h2>
+
+            <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+                
+                <!-- Functie 1: Direct-Booking-First -->
+                <div class="bg-background p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-primary">
+                    <svg class="w-10 h-10 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414a1 1 0 00-.707-.293H7a2 2 0 00-2 2v11m4 5l3 3m0 0l3-3m-3 3v-7"></path></svg>
+                    <h3 class="text-xl font-bold mb-3">Eigen Website & Directe Boekingen</h3>
+                    <p class="text-gray-600">Krijg uw eigen, mooie website met uw unieke branding. Geen afhankelijkheid van OTA's. Online betalingen (aanbetaling & saldo) direct geregeld.</p>
+                </div>
+
+                <!-- Functie 2: Lokaal Ingericht -->
+                <div class="bg-background p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-secondary">
+                    <svg class="w-10 h-10 text-secondary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <h3 class="text-xl font-bold mb-3">100% Lokaal: BE & NL Compliance</h3>
+                    <p class="text-gray-600">Automatische afhandeling van BTW, correcte facturen en toeristentaksen. Meertalige templates (NL/FR/EN) kant-en-klaar. Geen hoofdpijn meer over lokale wetgeving.</p>
+                </div>
+
+                <!-- Functie 3: Opinionated UX -->
+                <div class="bg-background p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-primary">
+                    <svg class="w-10 h-10 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.618a1.5 1.5 0 012.122 2.122l-10 10a1.5 1.5 0 01-1.414.414l-4 1a1.5 1.5 0 01-1.89-1.89l1-4a1.5 1.5 0 01.414-1.414l10-10z"></path></svg>
+                    <h3 class="text-xl font-bold mb-3">Opinionated & Eenvoudige UX</h3>
+                    <p class="text-gray-600">Wij hebben de beste flows al voor u bedacht. Weinig configuratie nodig: u bent in een uur live. Simpelheid voorop, geen overbodige functies.</p>
+                </div>
+            </div>
+            
+            <!-- USP Sectie: Schoonmaak -->
+            <div class="mt-20 lg:mt-32">
+                <div class="bg-primary/10 p-10 md:p-16 rounded-3xl shadow-2xl flex flex-col lg:flex-row items-center space-y-10 lg:space-y-0 lg:space-x-12">
+                    <div class="lg:w-1/2">
+                        <span class="text-sm font-semibold text-primary uppercase tracking-wider mb-2 block">Uniek Voordeel</span>
+                        <h3 class="text-4xl font-extrabold text-dark-text mb-4">
+                            De Schoonmaak-Magie: Geen Login, Geen Gedoe.
+                        </h3>
+                        <p class="text-lg text-gray-700 mb-6">
+                            Verlos uzelf van WhatsApp-groepen en Excel-lijsten. Ons platform creëert automatisch een taak bij elke boeking en stuurt uw kuismensen een **persoonlijke link** met hun planning.
+                        </p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center">
+                                <span class="text-primary font-bold mr-3 text-xl">&#10003;</span>
+                                Taak bij elke boeking, automatisch.
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-primary font-bold mr-3 text-xl">&#10003;</span>
+                                Kuismensen zien hun planning via een simpele, unieke URL.
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-primary font-bold mr-3 text-xl">&#10003;</span>
+                                Tijd en datum direct in hun agenda.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lg:w-1/2 flex justify-center">
+                        <!-- Placeholder for Cleaning Module Interface -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-full max-w-sm">
+                            <h4 class="text-lg font-bold mb-3 text-center">Schoonmaak Overzicht</h4>
+                            <div class="space-y-2">
+                                <div class="p-3 bg-green-50 rounded-lg flex justify-between items-center">
+                                    <span>#123 | Jansen (25/08)</span>
+                                    <span class="text-sm text-green-700 font-semibold">Nieuwe Taak</span>
+                                </div>
+                                <div class="p-3 bg-blue-50 rounded-lg flex justify-between items-center">
+                                    <span>#122 | De Vries (20/08)</span>
+                                    <span class="text-sm text-blue-700 font-semibold">Herinnering</span>
+                                </div>
+                                <div class="p-3 bg-gray-100 rounded-lg flex justify-between items-center">
+                                    <span>#121 | Pieters (15/08)</span>
+                                    <span class="text-sm text-gray-500 font-semibold">Voltooid</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-center text-xs text-gray-500">Unieke link verzonden naar Jan@kuisdienst.be</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Prijzen Sectie -->
+    <section id="prijzen" class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-extrabold text-dark-text sm:text-4xl mb-6">
+                Transparante Flat-Fee Prijzen
+            </h2>
+            <p class="max-w-xl mx-auto text-xl text-gray-600 mb-12">
+                Geen stress. U weet precies wat u betaalt. De Flat-Fee dekt alle functies.
+            </p>
+
+            <!-- Prijskaart -->
+            <div class="flex justify-center">
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-2xl border-4 border-primary max-w-lg w-full transform hover:scale-[1.02] transition duration-500">
+                    <p class="text-sm font-semibold text-primary uppercase">Het Beste Plan voor U</p>
+                    <h3 class="mt-2 text-5xl font-extrabold text-dark-text">€ XX,-</h3>
+                    <p class="mt-1 text-gray-500">per maand, per vakantiehuis. Jaarlijks gefactureerd.</p>
+                    
+                    <a href="#" class="mt-8 block w-full bg-primary text-white text-lg px-8 py-3 rounded-xl font-bold shadow-lg hover:bg-blue-700 transition duration-300">
+                        Start Nu & Bespaar Commissies
+                    </a>
+                    
+                    <div class="mt-8 border-t border-gray-200 pt-8">
+                        <ul class="space-y-4 text-left text-gray-600">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Uw eigen boekingswebsite</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Onbeperkt aantal boekingen</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> BTW, Toeristentaks, Facturen (BE/NL)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Automatische E-mails (NL/FR/EN)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> De unieke Schoonmaak-module</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Eenvoudige OTA integratie (iCal/Channel Manager)</li>
+                        </ul>
+                    </div>
+
+                    <p class="mt-6 text-sm text-gray-400">
+                        Heeft u meer dan 5 huizen? Neem contact op voor een op maat gemaakt tarief.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Risico Adressering -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-center text-dark-text sm:text-3xl mb-10">
+                Onze Focus: Eenvoud voor de Individuele Eigenaar
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Punt 1: Geen Zwaar PMS -->
+                <div class="p-6 bg-background rounded-xl shadow-md border-l-4 border-yellow-500">
+                    <p class="font-semibold text-lg mb-2 text-dark-text">Geen "Hotel Software"</p>
+                    <p class="text-gray-600 text-sm">Onze software is **niet** gebouwd voor hotels of grote parken. Wij focussen op de 1 tot 5 huizen, waardoor onze UX onverslaanbaar eenvoudig is.</p>
+                </div>
+                <!-- Punt 2: Lagere ARPU/Self Service -->
+                <div class="p-6 bg-background rounded-xl shadow-md border-l-4 border-yellow-500">
+                    <p class="font-semibold text-lg mb-2 text-dark-text">Laagste Onderhoud, Maximale Winst</p>
+                    <p class="text-gray-600 text-sm">Door onze efficiënte self-service en opinionated flows, houden we de kosten laag. Meer marge voor u, minder support nodig.</p>
+                </div>
+                <!-- Punt 3: Meerwaarde t.o.v. 'Gratis' -->
+                <div class="p-6 bg-background rounded-xl shadow-md border-l-4 border-yellow-500">
+                    <p class="font-semibold text-lg mb-2 text-dark-text">Beter dan 'Whatsapp + Excel'</p>
+                    <p class="text-gray-600 text-sm">Bespaar kostbare uren. De automatische communicatie, facturatie en schoonmaakplanning maken de flat-fee snel winstgevend.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="py-20 bg-primary">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-extrabold text-white mb-4">
+                Klaar om de Controle Terug te Nemen?
+            </h2>
+            <p class="text-xl text-blue-200 mb-8">
+                Geen complexe settings, geen verborgen commissies. Start vandaag met de slimste verhuursoftware voor uw vakantiehuis.
+            </p>
+            <a href="#" class="inline-block bg-secondary text-dark-text text-xl px-10 py-4 rounded-xl font-bold shadow-2xl shadow-yellow-500/50 hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
+                Start Uw Gratis Proefperiode (Geen Creditcard Nodig)
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-3 text-primary">[Platform Naam]</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition duration-150">Over Ons</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-150">Werken Bij</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-150">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-3">Product</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#functies" class="hover:text-white transition duration-150">Alle Functies</a></li>
+                        <li><a href="#prijzen" class="hover:text-white transition duration-150">Prijzen</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-150">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-3">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition duration-150">Helpcentrum</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-150">Veelgestelde Vragen</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-150">Status</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-3">Wettelijk</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition duration-150">Privacybeleid</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-150">Algemene Voorwaarden</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-10 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
+                &copy; 2024 [Platform Naam]. Alle rechten voorbehouden.
+            </div>
+        </div>
+    </footer>
 
 </body>
-
 </html>
