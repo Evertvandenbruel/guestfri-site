@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natuurlijk Beheer | [Platform Naam]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'eco-bg': '#F2F0E9', // Warm "Stone/Paper" wit
+                        'eco-green': '#3F6212', // Olive Green (Natuur)
+                        'eco-dark': '#1C1917', // Stone 900
+                        'clay': '#A8A29E', // Stone 400
+                        'clay-dark': '#78716C', // Stone 500
+                        'fresh-lime': '#D9F99D', // Lime 200 (Fris accent)
+                    },
+                    fontFamily: {
+                        'serif': ['DM Serif Display', 'serif'],
+                        'sans': ['Space Grotesk', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'grain': "url('https://www.transparenttextures.com/patterns/noise-lines.png')",
+                    },
+                    borderRadius: {
+                        'organic': '2rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+        /* Subtiele Grain Overlay voor een papieren gevoel */
+        .bg-grain-overlay {
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E');
+            opacity: 0.4;
+            pointer-events: none;
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+</head>
+<body class="bg-eco-bg text-eco-dark font-sans antialiased selection:bg-eco-green selection:text-white relative">
+    
+    <!-- Grain Texture over hele pagina -->
+    <div class="bg-grain-overlay fixed h-full w-full"></div>
+
+    <!-- Navigatie: Zwevend & Organisch -->
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-0">
+        <div class="max-w-5xl mx-auto bg-white/80 backdrop-blur-md border border-stone-200 rounded-full px-6 py-3 flex justify-between items-center shadow-sm">
+            <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-eco-green"></span>
+                <span class="font-serif text-xl tracking-wide">[Natuurhuis]</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
+                <a href="#essentie" class="hover:text-eco-green transition">Essentie</a>
+                <a href="#groei" class="hover:text-eco-green transition">Groei</a>
+                <a href="#investering" class="hover:text-eco-green transition">Investering</a>
+            </div>
+
+            <a href="#" class="bg-eco-dark text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-eco-green transition transform hover:scale-105">
+                Start Nu
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero: Minimalistisch & Impactvol -->
+    <header class="relative pt-40 pb-20 px-6 overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-stone-300 bg-white/50 backdrop-blur mb-8">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-eco-green opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-eco-green"></span>
+                </span>
+                <span class="text-xs font-bold uppercase tracking-widest text-stone-600">Nu beschikbaar in BE & NL</span>
+            </div>
+            
+            <h1 class="text-6xl md:text-8xl font-serif text-eco-dark mb-6 leading-[0.9] text-balance">
+                Verhuren in <br> <span class="text-eco-green italic">balans.</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-stone-600 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+                Een ecosysteem voor jouw vakantiehuis. 
+                Duurzame technologie die rust brengt in je administratie, planning en boekingen.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#essentie" class="group bg-eco-green text-white px-8 py-4 rounded-organic text-lg font-serif hover:bg-green-800 transition shadow-xl hover:shadow-2xl flex items-center justify-center gap-2">
+                    Ontdek de harmonie
+                    <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Abstracte Natuurvormen -->
+        <div class="absolute top-20 left-10 w-64 h-64 bg-fresh-lime/30 rounded-full blur-3xl mix-blend-multiply opacity-60 animate-pulse"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-stone-300/30 rounded-full blur-3xl mix-blend-multiply opacity-60"></div>
+    </header>
+
+    <!-- Visual Divider -->
+    <div class="w-full h-64 md:h-96 relative mx-auto max-w-6xl px-6 mb-24 group">
+        <div class="absolute inset-0 bg-stone-200 rounded-organic transform rotate-1 group-hover:rotate-0 transition duration-700"></div>
+        <div class="absolute inset-0 overflow-hidden rounded-organic">
+            <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2574&q=80" alt="Modern Cabin Nature" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition duration-700">
+        </div>
+    </div>
+
+    <!-- Section: De Essentie (Features) -->
+    <section id="essentie" class="py-20 px-6 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+                
+                <!-- Feature 1 -->
+                <div>
+                    <span class="text-5xl text-eco-green font-serif mb-4 block">01.</span>
+                    <h3 class="text-3xl font-serif mb-6">Organische Groei.</h3>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-6">
+                        Je eigen website, geworteld in goede techniek. Geen standaard template, maar een digitaal thuis dat de sfeer van jouw cabin of huisje ademt. 
+                        Directe boekingen komen binnen zonder dat je commissie "lekt" naar grote platformen.
+                    </p>
+                    <div class="inline-flex items-center gap-2 text-eco-green font-bold border-b border-eco-green pb-1 cursor-pointer hover:opacity-70">
+                        Bekijk voorbeeld websites
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="relative">
+                    <span class="text-5xl text-eco-green font-serif mb-4 block">02.</span>
+                    <h3 class="text-3xl font-serif mb-6">Natuurlijke Flow.</h3>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-6">
+                        Schoonmaakplanning die voelt als een briesje. Geen zware apps of logins.
+                        Jouw team ontvangt een eenvoudige link. Ze zien wat er moet gebeuren, in harmonie met jouw boekingskalender.
+                    </p>
+                    
+                    <!-- Abstract UI Mockup -->
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-stone-100 relative mt-8 transform md:rotate-2 hover:rotate-0 transition duration-500">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-fresh-lime flex items-center justify-center text-eco-green">🌿</div>
+                                <div>
+                                    <div class="font-bold text-sm">Huisje aan de Beek</div>
+                                    <div class="text-xs text-stone-500">Schoonmaak</div>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 bg-green-50 text-green-700 text-xs rounded-full font-bold">Voltooid</span>
+                        </div>
+                        <div class="h-2 w-full bg-stone-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-eco-green w-full"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="md:col-span-2 bg-stone-200/50 p-10 md:p-16 rounded-organic text-center border border-stone-200/50">
+                    <span class="text-5xl text-eco-green font-serif mb-4 block">03.</span>
+                    <h3 class="text-3xl font-serif mb-6">Lokale Wortels.</h3>
+                    <p class="text-stone-600 text-lg leading-relaxed max-w-2xl mx-auto">
+                        Wij spreken de taal van de wetgever in België en Nederland. 
+                        Of het nu gaat om toeristentaks in de Ardennen of BTW aan de kust: 
+                        onze software genereert automatisch de juiste, composteerbare... euh, digitale facturen.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Investering (Pricing) -->
+    <section id="investering" class="py-24 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif text-eco-dark mb-4">Eerlijke Ruilhandel.</h2>
+                <p class="text-stone-500 font-light text-lg">Eén transparant abonnement. Geen verborgen voetafdruk.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 bg-white rounded-organic overflow-hidden shadow-2xl border border-stone-100">
+                
+                <div class="p-12 flex flex-col justify-center bg-eco-dark text-white relative overflow-hidden">
+                    <!-- Decoratief bladpatroon (CSS radial) -->
+                    <div class="absolute -top-20 -left-20 w-64 h-64 bg-eco-green rounded-full blur-3xl opacity-20"></div>
+
+                    <h3 class="text-2xl font-serif mb-2 relative z-10">Volledige Oogst</h3>
+                    <div class="flex items-baseline gap-1 mb-8 relative z-10">
+                        <span class="text-6xl font-serif">€XX</span>
+                        <span class="text-stone-400">/mnd</span>
+                    </div>
+                    
+                    <a href="#" class="w-full py-4 bg-fresh-lime text-eco-dark font-bold text-center rounded-full hover:bg-white transition relative z-10">
+                        Start 14 Dagen Gratis
+                    </a>
+                    <p class="text-center text-xs text-stone-500 mt-4 relative z-10">Geen creditcard nodig.</p>
+                </div>
+
+                <div class="p-12 bg-stone-50 flex flex-col justify-center">
+                    <p class="font-bold text-eco-dark mb-6 text-sm uppercase tracking-widest">Inclusief:</p>
+                    <ul class="space-y-4 text-stone-600">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-eco-green"></span>
+                            Website & Hosting
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-eco-green"></span>
+                            Schoonmaak Module
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-eco-green"></span>
+                            0% Commissie op boekingen
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-eco-green"></span>
+                            Facturatie (BE/NL compliant)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer: Gronding -->
+    <footer class="py-20 px-6 text-center md:text-left border-t border-stone-200 relative z-10 bg-white">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end gap-10">
+            <div>
+                <span class="font-serif text-3xl text-eco-green block mb-4">[Natuurhuis]</span>
+                <p class="text-stone-500 max-w-xs leading-relaxed">
+                    SaaS voor de bewuste verhuurder.<br>
+                    Gemaakt met respect voor jouw tijd en onze omgeving.
+                </p>
+            </div>
+
+            <div class="flex gap-8 text-sm font-bold text-eco-dark">
+                <a href="#" class="hover:text-eco-green underline decoration-eco-green decoration-2 underline-offset-4">Contact</a>
+                <a href="#" class="hover:text-eco-green hover:underline decoration-eco-green decoration-2 underline-offset-4">Privacy</a>
+                <a href="#" class="hover:text-eco-green hover:underline decoration-eco-green decoration-2 underline-offset-4">Voorwaarden</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

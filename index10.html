@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zonnig Verhuren | [Platform Naam]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0284C7', // Sky 600 - Dieper, betrouwbaar blauw
+                        'primary-light': '#BAE6FD', // Sky 200 - Zacht accent
+                        'primary-dark': '#0C4A6E', // Sky 900 - Tekst/Contrast
+                        'canvas': '#F8FAFC', // Slate 50 - Zeer koel wit/grijs
+                        'white': '#FFFFFF',
+                        'text-main': '#334155', // Slate 700
+                        'text-muted': '#94A3B8', // Slate 400
+                    },
+                    fontFamily: {
+                        'heading': ['Poppins', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'clouds': "url('https://www.transparenttextures.com/patterns/clouds.png')",
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(2, 132, 199, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700&display=swap');
+
+        /* Golf Animatie onderaan header */
+        .wave-bottom {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(130% + 1.3px);
+            height: 100px;
+        }
+    </style>
+</head>
+<body class="bg-canvas text-text-main font-body antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigatie: Clean & Minimal -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur shadow-sm border-b border-slate-100 transition-all">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 text-2xl font-heading font-bold text-primary tracking-tight">
+                [Zonhuisje]
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 font-heading font-medium text-text-muted text-sm">
+                <a href="#voordelen" class="hover:text-primary transition">Voordelen</a>
+                <a href="#schoonmaak" class="hover:text-primary transition">Schoonmaak</a>
+                <a href="#prijs" class="hover:text-primary transition">Prijs</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#" class="hidden sm:block text-sm font-semibold text-text-muted hover:text-primary transition">Login</a>
+                <a href="#" class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-heading font-semibold hover:bg-primary-dark transition shadow-soft transform hover:-translate-y-0.5">
+                    Start Gratis
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero: Helder Blauw -->
+    <header class="relative pt-32 pb-48 bg-primary text-white overflow-hidden">
+        <!-- Wolken textuur (subtiel) -->
+        <div class="absolute inset-0 bg-clouds opacity-10"></div>
+        
+        <!-- Decoratieve Cirkel (Monochroom) -->
+        <div class="absolute top-[-100px] right-[-100px] w-96 h-96 bg-white rounded-full blur-3xl opacity-10"></div>
+
+        <div class="max-w-4xl mx-auto text-center px-6 relative z-10">
+            <span class="inline-block bg-white/10 backdrop-blur border border-white/20 rounded-full px-4 py-1 text-sm font-medium mb-8">
+                Speciaal voor particuliere verhuurders (BE/NL)
+            </span>
+            
+            <h1 class="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight">
+                Breng het vakantiegevoel terug in verhuren.
+            </h1>
+            
+            <p class="text-xl md:text-2xl font-normal text-primary-light mb-12 max-w-2xl mx-auto leading-relaxed">
+                Wij regelen de saaie dingen (facturen, planning, website) zodat jij tijd hebt voor de leuke dingen.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#prijs" class="bg-white text-primary text-lg font-heading font-bold px-10 py-4 rounded-full shadow-lg hover:bg-slate-50 transition transform hover:-translate-y-1">
+                    Start je reis hier
+                </a>
+            </div>
+        </div>
+
+        <!-- Golf Scheiding (Wit voor naadloze overgang naar canvas) -->
+        <div class="wave-bottom">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44 C204.00,106.39 0.00,0.00 0.00,0.00 L0.00,120.00 L1200.00,120.00 L1200.00,0.00 C1200.00,0.00 801.66,13.04 703.11,54.77 C557.06,116.59 476.35,-18.49 321.39,56.44 Z" fill="#F8FAFC"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Sectie: Features (Wit & Strak) -->
+    <section id="voordelen" class="py-20 px-6 bg-canvas">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-main mb-4">Eenvoud staat centraal.</h2>
+                <p class="text-text-muted text-lg">Geen toeters en bellen, gewoon wat je nodig hebt.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Feature 1 -->
+                <div class="bg-white p-10 rounded-3xl shadow-soft hover:shadow-lg transition duration-300 relative group border border-slate-100">
+                    <div class="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                        🌍
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-text-main mb-3">Je Eigen Website</h3>
+                    <p class="text-text-muted leading-relaxed text-sm">
+                        Een stralende website die direct boekbaar is. Geen commissies aan grote reuzen, maar inkomsten direct op jouw rekening.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-10 rounded-3xl shadow-soft hover:shadow-lg transition duration-300 relative group border border-slate-100">
+                    <div class="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                        📍
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-text-main mb-3">Lokaal Geregeld</h3>
+                    <p class="text-text-muted leading-relaxed text-sm">
+                        Of je nu in Knokke of op de Veluwe zit, wij kennen de regels. BTW en toeristentaks rollen automatisch correct uit de printer.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-10 rounded-3xl shadow-soft hover:shadow-lg transition duration-300 relative group border border-slate-100">
+                    <div class="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                        💸
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-text-main mb-3">Slimme Kassa</h3>
+                    <p class="text-text-muted leading-relaxed text-sm">
+                        Aanbetalingen bij boeken, restsaldo's automatisch gevraagd. Ondersteuning voor iDeal en Bancontact. Kassa!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectie: Schoonmaak USP (Blauw accent) -->
+    <section id="schoonmaak" class="py-24 px-6 bg-white overflow-hidden relative border-y border-slate-100">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
+            <div class="md:w-1/2">
+                <span class="text-primary font-bold uppercase tracking-widest text-xs mb-2 block">Geen Stress Meer</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-text-main mb-6 leading-tight">
+                    De Schoonmaak<br><span class="text-primary">op Automatische Piloot.</span>
+                </h2>
+                <p class="text-lg text-text-muted mb-8 leading-relaxed">
+                    Vergeet ingewikkelde apps of WhatsApp groepjes. Wij sturen jouw poetsteam gewoon een linkje. Daar zien ze wanneer de gasten vertrekken.
+                    Zij blij, jij blij.
+                </p>
+                
+                <ul class="space-y-4 font-heading font-semibold text-text-main text-sm">
+                    <li class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs">✓</div> 
+                        Geen inloggen nodig
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs">✓</div> 
+                        Altijd up-to-date met jouw kalender
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs">✓</div> 
+                        Melding als het huisje schoon is
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Visual Mockup (Clean) -->
+            <div class="md:w-1/2 relative">
+                <div class="bg-slate-100 rounded-[3rem] p-8 rotate-2">
+                    <div class="bg-white rounded-3xl p-6 shadow-xl border border-slate-100">
+                        <!-- Mockup Header -->
+                        <div class="flex items-center justify-between border-b border-gray-100 pb-4 mb-4">
+                            <div class="font-heading font-bold text-text-main">Planning</div>
+                            <div class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">Live Link</div>
+                        </div>
+                        
+                        <!-- Task Item -->
+                        <div class="bg-canvas p-4 rounded-xl mb-3 flex items-center justify-between border border-slate-100">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm text-text-muted">🧹</div>
+                                <div>
+                                    <div class="font-bold text-sm text-text-main">Huisje Duinroos</div>
+                                    <div class="text-xs text-text-muted">Vandaag, 10:00</div>
+                                </div>
+                            </div>
+                            <div class="w-6 h-6 rounded border-2 border-primary bg-primary flex items-center justify-center text-white text-xs">✓</div>
+                        </div>
+
+                         <!-- Task Item 2 -->
+                         <div class="bg-white border border-gray-100 p-4 rounded-xl flex items-center justify-center opacity-50">
+                            <span class="text-xs text-gray-400">Volgende taak laden...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectie: Pricing (Ticket: Clean Blue) -->
+    <section id="prijs" class="py-24 px-6 bg-primary text-white relative">
+        <div class="max-w-3xl mx-auto text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Jouw Ticket naar Vrijheid</h2>
+            <p class="text-primary-light text-lg mb-12">Eén prijs, alles inbegrepen. Geen verrassingen.</p>
+
+            <div class="bg-white text-text-main rounded-3xl overflow-hidden flex flex-col md:flex-row max-w-2xl mx-auto shadow-2xl">
+                <!-- Left: Features -->
+                <div class="p-10 md:w-2/3 text-left bg-white relative">
+                    <h3 class="text-2xl font-heading font-bold text-primary mb-2">All-Inclusive</h3>
+                    <p class="text-sm text-text-muted mb-8">Voor 1 vakantiehuis</p>
+                    
+                    <ul class="space-y-3 text-sm font-semibold text-text-main">
+                        <li class="flex items-center gap-3"><span class="text-primary/40">●</span> Website & Hosting</li>
+                        <li class="flex items-center gap-3"><span class="text-primary/40">●</span> 0% Commissie</li>
+                        <li class="flex items-center gap-3"><span class="text-primary/40">●</span> Schoonmaak Module</li>
+                        <li class="flex items-center gap-3"><span class="text-primary/40">●</span> Facturatie (BE/NL)</li>
+                    </ul>
+                </div>
+
+                <!-- Right: Price & CTA -->
+                <div class="p-8 md:w-1/3 bg-slate-50 flex flex-col items-center justify-center relative border-l border-dashed border-slate-200">
+                    <div class="text-4xl font-heading font-extrabold text-text-main mb-1">€XX</div>
+                    <div class="text-xs font-bold text-text-muted mb-6 uppercase tracking-wider">Per maand</div>
+                    
+                    <a href="#" class="bg-primary text-white w-full py-3 rounded-xl font-bold text-sm shadow-lg hover:bg-primary-dark transition text-center">
+                        Boek Nu
+                    </a>
+                </div>
+            </div>
+            
+            <p class="mt-8 text-primary-light text-sm font-medium opacity-80">14 dagen gratis proberen • Maandelijks opzegbaar</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="text-2xl font-heading font-bold text-primary">[Zonhuisje]</span>
+                <p class="text-text-muted text-sm mt-2">Gemaakt met 💙 voor verhuurders.</p>
+            </div>
+            <div class="flex gap-6 text-sm font-semibold text-text-muted">
+                <a href="#" class="hover:text-primary transition">Contact</a>
+                <a href="#" class="hover:text-primary transition">Privacy</a>
+                <a href="#" class="hover:text-primary transition">Voorwaarden</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

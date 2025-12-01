@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruimte voor Verhuur | [Platform Naam]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'peat-dark': '#292524', // Stone 800 (Turf/Aarde)
+                        'peat-black': '#1C1917', // Stone 900
+                        'reed-gold': '#D4A373', // Goudgeel/Hout
+                        'mist-gray': '#E7E5E4', // Stone 200 (Mist)
+                        'sky-light': '#F5F5F4', // Stone 100
+                        'rust-accent': '#BC4749', // Roestbruin/Herfst
+                    },
+                    fontFamily: {
+                        'slab': ['Bitter', 'serif'], // Stoer en leesbaar
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        // Vlonderpad in de mist
+                        'fens-hero': "url('https://images.unsplash.com/photo-1476989476008-62a265691079?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,500;0,700;1,400&family=Inter:wght@300;400;600&display=swap');
+
+        /* Topografische lijnen overlay (simulatie met CSS pattern) */
+        .topo-pattern {
+            background-image: radial-gradient(#D4A373 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.15;
+        }
+        
+        /* Frosted Glass effect voor kaarten */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-sky-light text-peat-dark font-sans antialiased selection:bg-reed-gold selection:text-white">
+
+    <!-- Navigatie: Transparant & Modern -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-peat-black/90 backdrop-blur-md text-mist-gray border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <!-- Abstract "Pad" Logo -->
+                <div class="flex space-x-1">
+                    <div class="w-1 h-6 bg-reed-gold rounded-full"></div>
+                    <div class="w-1 h-4 bg-rust-accent rounded-full self-end"></div>
+                    <div class="w-1 h-8 bg-mist-gray rounded-full self-center"></div>
+                </div>
+                <span class="text-xl font-slab font-bold tracking-wide text-white ml-2">[Venn]</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium tracking-wide">
+                <a href="#pad" class="hover:text-reed-gold transition">Het Pad</a>
+                <a href="#uitrusting" class="hover:text-reed-gold transition">Uitrusting</a>
+                <a href="#kaartje" class="hover:text-reed-gold transition">Lidmaatschap</a>
+            </div>
+
+            <a href="#" class="bg-reed-gold text-peat-black px-5 py-2 rounded-sm text-sm font-bold hover:bg-white transition shadow-lg">
+                Start Hier
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero: De Wijdsheid -->
+    <header class="relative h-screen min-h-[600px] flex items-center justify-start bg-peat-dark overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-fens-hero bg-cover bg-center opacity-70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-peat-black via-peat-black/60 to-transparent"></div>
+        
+        <!-- Topo lines overlay -->
+        <div class="absolute inset-0 topo-pattern mix-blend-overlay"></div>
+
+        <div class="relative z-10 max-w-3xl px-8 md:px-16 pt-12">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="h-px w-12 bg-reed-gold"></span>
+                <span class="text-reed-gold text-xs font-bold uppercase tracking-[0.2em]">SaaS voor BE & NL</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-slab font-bold text-white mb-8 leading-tight">
+                Vind de weg terug naar <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-reed-gold to-rust-accent">jouw vrijheid.</span>
+            </h1>
+            
+            <p class="text-xl font-light text-mist-gray mb-12 leading-relaxed max-w-xl border-l-2 border-white/20 pl-6">
+                Verhuren zonder te verdwalen in administratie. 
+                Een helder pad voor eigenaars van vakantiehuizen, chalets en cabins.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#uitrusting" class="px-8 py-4 bg-white text-peat-black font-bold rounded-sm shadow-xl hover:bg-mist-gray transition flex items-center justify-center gap-2 group">
+                    Start je tocht
+                    <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+                <a href="#kaartje" class="px-8 py-4 border border-white/30 text-white font-bold rounded-sm hover:bg-white/10 transition backdrop-blur-sm">
+                    Bekijk prijzen
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section: Het Pad (Story) -->
+    <section id="pad" class="py-24 px-6 bg-sky-light relative">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-slab font-bold text-peat-dark mb-6">"Geen modder, maar een vlonderpad."</h2>
+            <p class="text-lg text-gray-600 leading-loose">
+                Het beheren van een vakantiehuis kan voelen alsof je vastzit in het moeras. BTW-regels, dubbele boekingen, sleutelstress... 
+                Wij leggen de planken voor je neer. Een strak, stevig systeem waar je op kunt vertrouwen, zodat jij kunt genieten van het uitzicht.
+            </p>
+            <div class="mt-12 flex justify-center">
+                <div class="h-16 w-px bg-rust-accent/30"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Uitrusting (Grid) -->
+    <section id="uitrusting" class="py-20 px-6 bg-mist-gray relative overflow-hidden">
+        <!-- Decoratieve cirkel -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white rounded-full blur-3xl opacity-40 translate-x-1/2 -translate-y-1/2"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+            
+            <!-- Feature 1 -->
+            <div class="glass-card p-8 rounded-sm shadow-sm hover:shadow-md transition duration-300 border-l-4 border-l-reed-gold">
+                <span class="text-4xl mb-4 block text-peat-dark">⛺</span>
+                <h3 class="text-xl font-slab font-bold text-peat-dark mb-3">Jouw Basecamp</h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                    Een eigen website die staat als een huis. Geen dertien-in-een-dozijn, maar een design dat past bij de natuur. Direct boekbaar via iDeal/Bancontact.
+                </p>
+                <div class="text-xs font-bold uppercase tracking-wider text-reed-gold">Commissievrij</div>
+            </div>
+
+            <!-- Feature 2: Schoonmaak (Highlight) -->
+            <div class="bg-peat-dark text-mist-gray p-8 rounded-sm shadow-xl relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-br from-peat-dark to-black opacity-90"></div>
+                <div class="absolute right-0 top-0 w-32 h-32 bg-rust-accent rounded-full blur-2xl opacity-20 group-hover:opacity-30 transition"></div>
+                
+                <div class="relative z-10">
+                    <span class="text-4xl mb-4 block">🔥</span>
+                    <h3 class="text-xl font-slab font-bold text-white mb-3">Rooksignalen 2.0</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Communicatie met je schoonmaakteam was nog nooit zo simpel. Zij krijgen een magische link. Geen login, geen app. Gewoon klikken en poetsen.
+                    </p>
+                    
+                    <!-- Micro UI -->
+                    <div class="bg-white/10 backdrop-blur-sm p-3 rounded border border-white/10 flex justify-between items-center">
+                        <span class="text-xs font-mono">Huisje 4</span>
+                        <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Schoon ✓</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="glass-card p-8 rounded-sm shadow-sm hover:shadow-md transition duration-300 border-l-4 border-l-reed-gold">
+                <span class="text-4xl mb-4 block text-peat-dark">🗺️</span>
+                <h3 class="text-xl font-slab font-bold text-peat-dark mb-3">Lokale Kennis</h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                    Wij kennen het terrein in België en Nederland. Toeristenbelasting en BTW worden automatisch berekend en op de factuur gezet.
+                </p>
+                <div class="text-xs font-bold uppercase tracking-wider text-reed-gold">100% Conform</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Visual Break -->
+    <section class="py-32 bg-peat-dark relative bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1500320821405-8fc17e08272f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+        <div class="absolute inset-0 bg-peat-black/50"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center text-center h-full px-6">
+            <h2 class="text-3xl md:text-5xl font-slab text-white mb-8 font-bold leading-tight">
+                "Ruimte om te ademen."
+            </h2>
+            <a href="#kaartje" class="inline-block border border-white/50 text-white px-8 py-3 rounded-sm hover:bg-white hover:text-peat-dark transition backdrop-blur-sm">
+                Bekijk de mogelijkheden
+            </a>
+        </div>
+    </section>
+
+    <!-- Pricing: Het Kaartje -->
+    <section id="kaartje" class="py-24 px-6 bg-sky-light">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 shadow-2xl rounded-sm overflow-hidden">
+                
+                <!-- Left: Value Prop -->
+                <div class="bg-white p-12 lg:p-16 flex flex-col justify-center">
+                    <h2 class="text-3xl font-slab font-bold text-peat-dark mb-6">Eén helder tarief.</h2>
+                    <p class="text-gray-600 mb-8">Geen complexe zones of hoogseizoentarieven voor onze software. Gewoon één vast bedrag voor al je tools.</p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-reed-gold/20 flex items-center justify-center mt-0.5">
+                                <svg class="h-4 w-4 text-reed-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="ml-3 text-peat-dark font-medium">Hosting & Domeinnaam</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-reed-gold/20 flex items-center justify-center mt-0.5">
+                                <svg class="h-4 w-4 text-reed-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="ml-3 text-peat-dark font-medium">Schoonmaakmodule</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-reed-gold/20 flex items-center justify-center mt-0.5">
+                                <svg class="h-4 w-4 text-reed-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="ml-3 text-peat-dark font-medium">Automatische Facturen (BE/NL)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-reed-gold/20 flex items-center justify-center mt-0.5">
+                                <svg class="h-4 w-4 text-reed-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="ml-3 text-peat-dark font-medium">Support door echte mensen</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right: Price -->
+                <div class="bg-peat-dark p-12 lg:p-16 flex flex-col justify-center items-center text-center relative overflow-hidden">
+                    <!-- Decoratief patroon -->
+                    <div class="topo-pattern absolute inset-0 opacity-10"></div>
+                    
+                    <span class="relative z-10 text-reed-gold font-bold uppercase tracking-widest text-sm mb-2">All-in Access</span>
+                    <div class="relative z-10 flex items-start justify-center text-white">
+                        <span class="text-4xl mt-2 mr-2">€</span>
+                        <span class="text-7xl font-slab font-bold">XX</span>
+                    </div>
+                    <span class="relative z-10 text-mist-gray/60 text-sm mt-2 mb-8">per maand / per huisje</span>
+                    
+                    <a href="#" class="relative z-10 w-full bg-rust-accent text-white font-bold py-4 rounded-sm hover:bg-red-800 transition shadow-lg">
+                        Start Gratis Proefperiode
+                    </a>
+                    <p class="relative z-10 text-xs text-stone-500 mt-4">14 dagen gratis. Geen creditcard nodig.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer: De Horizon -->
+    <footer class="bg-peat-black text-stone-500 py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-xl font-slab font-bold text-white">[Venn]</span>
+                </div>
+                <p class="text-sm leading-relaxed max-w-xs text-stone-600">
+                    Gebouwd voor de ruige natuur van de Ardennen en de Hoge Venen. 
+                    Voor eigenaars die houden van kwaliteit en rust.
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-4">Platform</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-reed-gold transition">Features</a></li>
+                    <li><a href="#" class="hover:text-reed-gold transition">Prijzen</a></li>
+                    <li><a href="#" class="hover:text-reed-gold transition">Login</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Wettelijk</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-reed-gold transition">Privacy</a></li>
+                    <li><a href="#" class="hover:text-reed-gold transition">Voorwaarden</a></li>
+                    <li><a href="#" class="hover:text-reed-gold transition">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5 text-center text-xs text-stone-700">
+            &copy; 2024 [Platform Naam]. Made in Belgium.
+        </div>
+    </footer>
+
+</body>
+</html>

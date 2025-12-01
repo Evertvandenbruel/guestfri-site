@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Je eigen vakantiehuis website | [NAAM]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#B07D62', // Terracotta / Warme Klei
+                        'primary-hover': '#96634C', 
+                        'primary-light': '#EBE3D9', // Havermout / Linnen
+                        'accent': '#8A9A5B', // Salie Groen / Mos
+                        'accent-hover': '#728248',
+                        'canvas': '#FAF8F6', // Kalkwit / Gebroken wit
+                        'white': '#FFFFFF',
+                        'text-main': '#3E3C38', // Donker Schors / Houtskool
+                        'text-muted': '#8C857E', // Taupe / Grijsbruin
+                        'warm-sand': '#F0EBE5', // Zandkleur
+                    },
+                    fontFamily: {
+                        'heading': ['Poppins', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'grain': "url('https://www.transparenttextures.com/patterns/cream-paper.png')",
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 25px -5px rgba(176, 125, 98, 0.25), 0 8px 10px -6px rgba(176, 125, 98, 0.1)',
+                        'card': '0 4px 6px -1px rgba(62, 60, 56, 0.05), 0 2px 4px -1px rgba(62, 60, 56, 0.03)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700&display=swap');
+
+        /* Golf Animatie onderaan header */
+        .wave-bottom {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(130% + 1.3px);
+            height: 100px;
+        }
+        
+        /* Zwevende animatie */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* FAQ Details animatie fix */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-canvas text-text-main font-body antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigatie -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-primary-light transition-all">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 text-2xl font-heading font-bold text-primary tracking-tight">
+                <span class="text-accent text-3xl">🌿</span> [NAAM]
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 font-heading font-medium text-text-muted text-sm">
+                <a href="#voor-wie" class="hover:text-primary transition">Voor wie?</a>
+                <a href="#features" class="hover:text-primary transition">Features</a>
+                <a href="#hoe-het-werkt" class="hover:text-primary transition">Hoe het werkt</a>
+                <a href="#prijzen" class="hover:text-primary transition">Prijzen</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#" class="hidden sm:block text-sm font-semibold text-text-muted hover:text-primary transition">Login</a>
+                <a href="#" class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-heading font-semibold hover:bg-primary-hover transition shadow-soft transform hover:-translate-y-0.5">
+                    Plan een demo
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-48 bg-gradient-to-br from-warm-sand to-white overflow-hidden">
+        <!-- Textuur overlay -->
+        <div class="absolute inset-0 bg-grain opacity-40"></div>
+        
+        <!-- Decoratieve Bollen -->
+        <div class="absolute top-[-50px] left-[-50px] w-64 h-64 bg-primary/20 rounded-full blur-3xl opacity-60 animate-float"></div>
+        <div class="absolute bottom-[50px] right-[-50px] w-80 h-80 bg-accent/20 rounded-full blur-3xl opacity-50"></div>
+
+        <div class="max-w-4xl mx-auto text-center px-6 relative z-10">
+            <span class="inline-block bg-white/60 backdrop-blur border border-white rounded-full px-4 py-1 text-sm font-medium mb-8 text-primary shadow-sm">
+                🍂 In 1 uur live
+            </span>
+            
+            <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight text-text-main">
+                Je eigen website voor je vakantiehuis, <span class="text-primary relative inline-block">in 1 uur live.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl font-normal text-text-muted mb-10 max-w-2xl mx-auto leading-relaxed">
+                [NAAM] is het eenvoudige boekingsplatform voor eigenaars met één vakantiehuis (of een paar). Je krijgt een eigen website, online betalingen, automatische mails en een super simpele schoonmaakplanning – zonder commissies per boeking.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#demo" class="bg-primary text-white text-lg font-heading font-bold px-10 py-4 rounded-full shadow-soft hover:bg-primary-hover transition transform hover:-translate-y-1">
+                    Plan een demo
+                </a>
+                <a href="#voorbeeld" class="bg-white text-primary border border-primary-light text-lg font-heading font-bold px-10 py-4 rounded-full shadow-sm hover:bg-canvas transition transform hover:-translate-y-1">
+                    Vraag voorbeeldsite
+                </a>
+            </div>
+        </div>
+
+        <!-- Golf Scheiding -->
+        <div class="wave-bottom">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44 C204.00,106.39 0.00,0.00 0.00,0.00 L0.00,120.00 L1200.00,120.00 L1200.00,0.00 C1200.00,0.00 801.66,13.04 703.11,54.77 C557.06,116.59 476.35,-18.49 321.39,56.44 Z" fill="#FAF8F6"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Sectie: Voor wie & Problemen (Combinatie) -->
+    <section id="voor-wie" class="py-20 px-6 bg-canvas">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                
+                <!-- Links: Voor wie -->
+                <div>
+                    <span class="text-accent font-bold uppercase tracking-widest text-xs mb-2 block">Doelgroep</span>
+                    <h2 class="text-3xl font-heading font-bold text-text-main mb-6">Gemaakt voor eigenaars met één vakantiehuis</h2>
+                    <p class="text-text-muted mb-8 leading-relaxed">
+                        Geen ingewikkelde hotelsoftware. Gewoon een helder systeem dat doet wat jij nodig hebt. [NAAM] is speciaal gebouwd voor:
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-primary-light flex items-center justify-center text-primary text-xs mt-0.5">✓</div>
+                            <span class="text-text-main text-sm font-medium">Eigenaars met één vakantiehuis (of een paar) in België of Nederland.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-primary-light flex items-center justify-center text-primary text-xs mt-0.5">✓</div>
+                            <span class="text-text-main text-sm font-medium">Mensen die naast Airbnb/Booking ook rechtstreeks willen verhuren.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-primary-light flex items-center justify-center text-primary text-xs mt-0.5">✓</div>
+                            <span class="text-text-main text-sm font-medium">Eigenaars met een verouderde website zonder betaalfunctie.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-primary-light flex items-center justify-center text-primary text-xs mt-0.5">✓</div>
+                            <span class="text-text-main text-sm font-medium">Iedereen die klaar is met Excel, WhatsApp en losse mailtjes.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Rechts: Problemen (Herkenbaar?) -->
+                <div class="bg-white p-10 rounded-[2rem] shadow-card border border-primary-light/50 relative">
+                    <div class="absolute -top-5 -right-5 w-20 h-20 bg-primary/10 rounded-full blur-2xl"></div>
+                    
+                    <h3 class="text-2xl font-heading font-bold text-text-main mb-6">Herkenbaar?</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary text-lg mt-0.5">⚠️</span>
+                            <span class="text-text-muted text-sm leading-relaxed">Je betaalt stevige commissies aan platforms, terwijl gasten je eigenlijk rechtstreeks willen boeken.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary text-lg mt-0.5">⚠️</span>
+                            <span class="text-text-muted text-sm leading-relaxed">Je website (als je die al hebt) kan niet online laten reserveren of betalen.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary text-lg mt-0.5">⚠️</span>
+                            <span class="text-text-muted text-sm leading-relaxed">Gasten krijgen hun info via losse mailtjes, Word-bijlagen of PDF’s.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary text-lg mt-0.5">⚠️</span>
+                            <span class="text-text-muted text-sm leading-relaxed">De schoonmaakplanning zit in Excel, een schriftje of een WhatsApp-groep.</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-8 pt-6 border-t border-primary-light text-center">
+                        <p class="text-accent font-bold text-sm">[NAAM] brengt dit allemaal samen in één eenvoudige tool.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectie: Features (3 Kolommen) -->
+    <section id="features" class="py-24 px-6 bg-white border-y border-primary-light/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-accent font-bold uppercase tracking-widest text-xs mb-2 block">Alles-in-één</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-main mb-4">Alles wat je nodig hebt voor je vakantiehuis</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Kolom 1 -->
+                <div class="bg-canvas p-8 rounded-[2rem] hover:shadow-soft transition duration-300 border border-primary-light/50">
+                    <div class="w-14 h-14 bg-primary-light rounded-2xl flex items-center justify-center text-2xl mb-6 text-primary">
+                        🏡
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-text-main mb-4">Eigen Website</h3>
+                    <p class="text-text-muted text-sm mb-4">Je eigen website per vakantiehuis.</p>
+                    <ul class="space-y-2">
+                        <li class="text-sm text-text-main flex gap-2"><span class="text-accent">●</span> Mooie, simpele website op jouw domeinnaam.</li>
+                        <li class="text-sm text-text-main flex gap-2"><span class="text-accent">●</span> Beschikbaarheidkalender en prijzen automatisch getoond.</li>
+                        <li class="text-sm text-text-main flex gap-2"><span class="text-accent">●</span> Gasten boeken rechtstreeks, zonder commissie.</li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 2 -->
+                <div class="bg-canvas p-8 rounded-[2rem] hover:shadow-soft transition duration-300 border border-primary-light/50">
+                    <div class="w-14 h-14 bg-warm-sand rounded-2xl flex items-center justify-center text-2xl mb-6 text-primary">
+                        💳
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-text-main mb-4">Boeking & Betaling</h3>
+                    <p class="text-text-muted text-sm mb-4">Online boekingen en betalingen.</p>
+                    <ul class="space-y-2">
+                        <li class="text-sm text-text-main flex gap-2"><span class="text-accent">●</span> Gasten reserveren in een paar klikken.</li>
+                        <li class="text-sm text-text-main flex gap-2"><span class="text-accent">●</span> Ondersteuning voor aanbetaling + saldo.</li>
+                        <li class="text-sm text-text-main flex gap-2"><span class="text-accent">●</span> Automatische mails: bevestiging, herinnering, saldo.</li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3 -->
+                <div class="bg-canvas p-8 rounded-[2rem] hover:shadow-soft transition duration-300 border border-primary-light/50">
+                    <div class="w-14 h-14 bg-accent/20 rounded-2xl flex items-center justify-center text-2xl mb-6 text-accent">
+                        🧹
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-text-main mb-4">Schoonmaak & Admin</h3>
+                    <p class="text-text-muted text-sm mb-4">Supersimpele communicatie.</p>
+                    <ul class="space-y-2">
+                        <li class="text-sm text-text-main flex gap-2"><span class="text-accent">●</span> Bij elke boeking automatisch een kuistaak.</li>
+                        <li class="text-sm text-text-main flex gap-2"><span class="text-accent">●</span> Kuismens krijgt een link, geen login nodig.</li>
+                        <li class="text-sm text-text-main flex gap-2"><span class="text-accent">●</span> Lokaal ingeregeld: btw, facturen, toeristentaks.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectie: Philosophy & How it works -->
+    <section id="hoe-het-werkt" class="py-20 px-6 bg-canvas">
+        <div class="max-w-6xl mx-auto">
+            
+            <!-- Philosophy Block -->
+            <div class="bg-primary text-white p-10 md:p-16 rounded-[2.5rem] text-center mb-20 relative overflow-hidden shadow-soft">
+                <div class="absolute top-0 left-0 w-full h-full bg-grain opacity-10"></div>
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">In een uur live. Omdat het niet ingewikkelder hoeft.</h2>
+                    <p class="text-primary-light text-lg mb-8 leading-relaxed">
+                        [NAAM] is bewust simpel en opinionated. Geen honderd instellingen, maar logische standaarden.
+                        Je volgt gewoon de stappen en wij regelen de techniek. In ongeveer een uur is je vakantiehuis boekbaar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Steps -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-heading font-bold text-text-main">Zo werkt [NAAM] in 4 stappen</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Stap 1 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-white border-2 border-primary-light text-primary font-bold flex items-center justify-center mb-4 text-xl shadow-sm">1</div>
+                    <h4 class="font-heading font-bold text-text-main mb-2">Meld je aan</h4>
+                    <p class="text-sm text-text-muted">Maak een account en vul de basis in: naam, locatie, aantal personen.</p>
+                </div>
+                <!-- Stap 2 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-white border-2 border-primary-light text-primary font-bold flex items-center justify-center mb-4 text-xl shadow-sm">2</div>
+                    <h4 class="font-heading font-bold text-text-main mb-2">Voeg inhoud toe</h4>
+                    <p class="text-sm text-text-muted">Upload foto’s, schrijf een beschrijving en stel prijzen in. Templates helpen je.</p>
+                </div>
+                <!-- Stap 3 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-white border-2 border-primary-light text-primary font-bold flex items-center justify-center mb-4 text-xl shadow-sm">3</div>
+                    <h4 class="font-heading font-bold text-text-main mb-2">Activeer & Koppel</h4>
+                    <p class="text-sm text-text-muted">Koppel online betalingen, kies je taal (NL/FR/EN) en activeer de mails.</p>
+                </div>
+                <!-- Stap 4 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-white border-2 border-primary-light text-primary font-bold flex items-center justify-center mb-4 text-xl shadow-sm">4</div>
+                    <h4 class="font-heading font-bold text-text-main mb-2">Deel je website</h4>
+                    <p class="text-sm text-text-muted">Je site is live! Deel de link met je gasten en op social media.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sectie: Prijzen -->
+    <section id="prijzen" class="py-24 px-6 bg-white border-t border-primary-light/30">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-main mb-4">Eerlijke, transparante prijzen</h2>
+                <p class="text-text-muted text-lg">Vaste prijs per maand. Geen verrassingen.</p>
+            </div>
+
+            <!-- Pricing Ticket -->
+            <div class="bg-primary-light/30 rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row shadow-soft">
+                
+                <!-- Left: Info -->
+                <div class="p-10 md:w-2/3 bg-white relative">
+                    <h3 class="text-2xl font-heading font-bold text-primary mb-4">Het [NAAM] Abonnement</h3>
+                    <ul class="space-y-3 text-text-main mb-8">
+                        <li class="flex items-center gap-3"><span class="text-accent font-bold">✓</span> Vaste prijs per vakantiehuis, per maand</li>
+                        <li class="flex items-center gap-3"><span class="text-accent font-bold">✓</span> Geen verborgen commissies per boeking</li>
+                        <li class="flex items-center gap-3"><span class="text-accent font-bold">✓</span> Controle over je prijzen én gasten</li>
+                        <li class="flex items-center gap-3"><span class="text-accent font-bold">✓</span> Inclusief hosting & updates</li>
+                    </ul>
+                    <p class="text-sm text-text-muted italic">Probeer [NAAM] X dagen gratis uit – zonder kredietkaart.</p>
+                </div>
+
+                <!-- Right: Price & Action -->
+                <div class="p-10 md:w-1/3 bg-primary text-white flex flex-col items-center justify-center text-center relative">
+                    <div class="absolute left-0 top-0 bottom-0 border-l-4 border-white border-dotted h-full w-1 hidden md:block"></div>
+                    
+                    <span class="text-xs font-bold uppercase tracking-widest text-primary-light mb-2">Vanaf</span>
+                    <div class="text-5xl font-heading font-bold mb-2">€XX</div>
+                    <span class="text-sm text-primary-light mb-6">per maand / huis</span>
+                    
+                    <a href="#" class="bg-white text-primary w-full py-3 rounded-xl font-bold text-sm shadow-sm hover:bg-canvas transition">
+                        Start proefperiode
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sectie: FAQ -->
+    <section class="py-20 px-6 bg-canvas">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-heading font-bold text-text-main mb-10 text-center">Veelgestelde vragen</h2>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <details class="group bg-white rounded-2xl p-6 shadow-card border border-primary-light/30 cursor-pointer open:ring-2 open:ring-primary-light/50 transition-all">
+                    <summary class="flex justify-between items-center font-heading font-bold text-text-main">
+                        Ik heb maar één vakantiehuis. Is [NAAM] dan niet “te veel”?
+                        <span class="transform group-open:rotate-180 transition-transform text-primary">▼</span>
+                    </summary>
+                    <p class="mt-4 text-text-muted leading-relaxed text-sm">
+                        Nee, [NAAM] is juist gemaakt voor eigenaars met één huis. Je hoeft geen ingewikkeld hotelsysteem te leren. Je krijgt gewoon alles wat je nodig hebt: website, boekingen, betalingen en schoonmaakplanning.
+                    </p>
+                </details>
+
+                <!-- FAQ Item 2 -->
+                <details class="group bg-white rounded-2xl p-6 shadow-card border border-primary-light/30 cursor-pointer open:ring-2 open:ring-primary-light/50 transition-all">
+                    <summary class="flex justify-between items-center font-heading font-bold text-text-main">
+                        Kan ik [NAAM] combineren met Airbnb / Booking / Micazu?
+                        <span class="transform group-open:rotate-180 transition-transform text-primary">▼</span>
+                    </summary>
+                    <p class="mt-4 text-text-muted leading-relaxed text-sm">
+                        Ja. Je kunt je huis nog steeds op die platforms laten staan, maar daarnaast je eigen website gebruiken voor directe boekingen – zonder commissies per boeking.
+                    </p>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details class="group bg-white rounded-2xl p-6 shadow-card border border-primary-light/30 cursor-pointer open:ring-2 open:ring-primary-light/50 transition-all">
+                    <summary class="flex justify-between items-center font-heading font-bold text-text-main">
+                        Moet mijn kuismens inloggen in een systeem?
+                        <span class="transform group-open:rotate-180 transition-transform text-primary">▼</span>
+                    </summary>
+                    <p class="mt-4 text-text-muted leading-relaxed text-sm">
+                        Nee. Je kuismens krijgt gewoon een persoonlijke link met alle toekomstige kuistaken. Geen wachtwoorden, geen app nodig.
+                    </p>
+                </details>
+
+                <!-- FAQ Item 4 -->
+                <details class="group bg-white rounded-2xl p-6 shadow-card border border-primary-light/30 cursor-pointer open:ring-2 open:ring-primary-light/50 transition-all">
+                    <summary class="flex justify-between items-center font-heading font-bold text-text-main">
+                        Is [NAAM] aangepast aan Belgische en Nederlandse regels?
+                        <span class="transform group-open:rotate-180 transition-transform text-primary">▼</span>
+                    </summary>
+                    <p class="mt-4 text-text-muted leading-relaxed text-sm">
+                        Ja, [NAAM] houdt rekening met btw, facturen en toeristentaks in België en Nederland. Je vertrekt van goede standaardinstellingen, die je nog kunt fine-tunen waar nodig.
+                    </p>
+                </details>
+                
+                <!-- FAQ Item 5 -->
+                <details class="group bg-white rounded-2xl p-6 shadow-card border border-primary-light/30 cursor-pointer open:ring-2 open:ring-primary-light/50 transition-all">
+                    <summary class="flex justify-between items-center font-heading font-bold text-text-main">
+                        Ik ben niet zo technisch. Kan ik dit wel zelf?
+                        <span class="transform group-open:rotate-180 transition-transform text-primary">▼</span>
+                    </summary>
+                    <p class="mt-4 text-text-muted leading-relaxed text-sm">
+                        Ja. [NAAM] leidt je stap voor stap door alles wat nodig is. En als je vastloopt, helpen we je op weg.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 px-6 bg-primary-light/20 border-t border-primary-light/50 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-heading font-bold text-text-main mb-6">Minder gedoe, meer reserveringen via je eigen site</h2>
+            <p class="text-lg text-text-muted mb-10 max-w-2xl mx-auto">
+                Geef je vakantiehuis een professionele online aanwezigheid zonder gedoe met Excel, losse mailtjes en dure commissies.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-primary text-white text-lg font-heading font-bold px-10 py-4 rounded-full shadow-soft hover:bg-primary-hover transition transform hover:-translate-y-1">
+                    Plan een demo
+                </a>
+                <a href="#" class="bg-white text-primary border border-primary-light text-lg font-heading font-bold px-10 py-4 rounded-full shadow-sm hover:bg-canvas transition transform hover:-translate-y-1">
+                    Vraag voorbeeldsite
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-primary-light/30">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="text-2xl font-heading font-bold text-primary">[NAAM]</span>
+                <p class="text-text-muted text-sm mt-2">Gemaakt met 🍂 voor verhuurders in BE & NL.</p>
+            </div>
+            <div class="flex gap-6 text-sm font-semibold text-text-muted">
+                <a href="#" class="hover:text-primary transition">Contact</a>
+                <a href="#" class="hover:text-primary transition">Privacy</a>
+                <a href="#" class="hover:text-primary transition">Voorwaarden</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
